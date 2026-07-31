@@ -1,0 +1,158 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Likhith N Gowda | Software Developer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        const text = "Likhith N Gowda - Software Developer & GenAI Enthusiast";
+        let i = 0;
+        function typeWriter() {
+            if (i < text.length) {
+                document.getElementById("typewriter").innerHTML += text.charAt(i);
+                i++;
+                setTimeout(typeWriter, 50);
+            }
+        }
+        window.onload = typeWriter;
+    </script>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">Likhith N Gowda</div>
+            <br>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Terminal Hero Section -->
+        <section id="hero" class="hero-section">
+            <div class="terminal-window">
+                <div class="terminal-header">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                </div>
+                <div class="terminal-body">
+                    <p><span class="prompt">> start_session</span></p>
+                    <p><span class="prompt">> initializing introduction_sequence</span></p>
+                    <p class="typewriter-text" id="typewriter"></p>
+                </div>
+            </div>
+            <h1 class="hero-headline">Building reliable backends and the <span class="highlight">Intelligence</span> on top.</h1>
+            <p class="hero-subtext">Transitioning robust Java & SAP architectures into the era of Generative AI and Retrieval-Augmented systems.</p>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section">
+            <h1>Hi, I'm <span class="highlight">Likhith N Gowda</span></h1>
+            <h2>A Passionate Software Developer & GENAi Enthusiast</h2>
+            <!-- <a href="#experience" class="btn">View My Work</a> -->
+            <div class="submit-group">
+                    <a href="#experience" class="submit-btn" style="text-decoration: none; display: inline-block; text-align: center;">View My Work</a>
+                </div>
+            <p>I specialize in Java and SAP technologies, focused on building efficient, scalable, and robust software solutions.</p>
+        </section>
+        
+        <!-- Resume Section -->
+        <section id="resume" class="section">
+            <h3>Resume</h3>
+            <p>For a detailed overview of my professional journey, please download my resume.</p>
+            <div class="submit-group">
+                <a href="resume.pdf" download="Likhith_N_Gowda_Resume.pdf" class="submit-btn" style="text-decoration: none; display: inline-block; text-align: center;">Download Resume</a>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="section">
+            <h2>Professional Experience</h2>
+            <div class="project-card">
+                <div class="project-info">
+                    <span class="tag">Software Developer</span>
+                    <h3>SAP Labs India</h3>
+                    <ul style="color: var(--text-secondary); padding-left: 1.2rem; margin-top: 1rem; line-height: 1.6;">
+                        <li>Developed and maintained enterprise-level applications utilizing Java and SAP technologies.</li>
+                        <li>Collaborated with cross-functional teams to deliver scalable software solutions.</li>
+                    </ul>
+                </div>
+                
+                <!-- Architecture Flow Node -->
+                <div class="node-flow">
+                    <div class="node">Java</div>
+                    <div class="arrow">→</div>
+                    <div class="node active-node">SAP Ecosystem</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="section">
+            <h2>Education</h2>
+            <div class="project-card">
+                <div class="project-info">
+                    <span class="tag">Postgraduate</span>
+                    <h3>Masters in Software Engineering</h3>
+                    <p style="color: var(--text-secondary); margin-top: 0.5rem; font-size: 1.1rem;">BITS Pilani</p>
+                </div>
+                <br>
+                <div class="project-info">
+                    <span class="tag">Graduate</span>
+                    <h3>Bachelors in Electronics and Communication Engineering</h3>
+                    <p style="color: var(--text-secondary); margin-top: 0.5rem; font-size: 1.1rem;">Alva's Institute of Engineering and Technology</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Social Links Contact Section -->
+        <section id="contact" class="section">
+            <h2>Get In Touch</h2>
+            <p>Ready to collaborate? Let's connect.</p>
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=likhithgowda533@gmail.com" class="btn" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-envelope"></i>Email Me</a>
+            <a href="https://github.com/naggowda" class="btn" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i>GitHub</a>
+            <br>
+            <a href="https://www.linkedin.com/in/likhith-n-gowda-377974175?utm_source=share_via&utm_content=profile&utm_medium=member_ios" class="btn" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i>LinkedIn</a>
+            <a href="https://www.instagram.com/blatant.soul?igsh=Nm12ZWE1OGxvN2U5&utm_source=qr" class="btn" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i>Instagram</a>
+        </section>
+
+        <!-- Contact Form Section -->
+        <section id="contact-form" class="section">
+            <h2>Got Something for me? Fill It Out, Let's Talk!</h2>
+            <form class="contact-form" action="https://formspree.io/f/mlgqkgzr" method="POST">
+                <div class="input-group name-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name">
+                </div>
+                
+                <div class="input-group email-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email">
+                </div>
+                
+                <div class="input-group message-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message"></textarea>
+                </div>
+                
+                <div class="submit-group">
+                    <button type="submit" class="submit-btn">Get In Touch ↗</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-right"><a href="#">Back to top &uarr;</a></div>
+        <p>&copy; 2026 Likhith N Gowda</p>
+    </footer>
+</body>
+</html> -->

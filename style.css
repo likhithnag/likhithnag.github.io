@@ -1,0 +1,357 @@
+/* Core Dark Theme */
+:root {
+    --bg-color: #331148;
+    --surface-color: #161616;
+    --text-primary: #f2f2f2;
+    --text-secondary: #a1a1aa;
+    --accent-glow: #00f2fe;
+    --accent-dark: #000406;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    font-family: 'Inter', system-ui, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Terminal Hero */
+.hero-section {
+    max-width: 900px;
+    margin: 10vh auto;
+    padding: 2rem;
+}
+
+.terminal-window {
+    background: #111;
+    border: 1px solid #333;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    font-family: monospace;
+}
+
+.terminal-header {
+    background: #222;
+    padding: 10px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    display: flex;
+    gap: 8px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+.red { background: #ff5f56; }
+.yellow { background: #ffbd2e; }
+.green { background: #27c93f; }
+
+.terminal-body {
+    padding: 1.5rem;
+    color: var(--text-secondary);
+}
+
+.prompt {
+    color: var(--accent-glow);
+}
+
+.hero-headline {
+    font-size: 4rem;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+}
+
+.highlight {
+    color: var(--accent-glow);
+    text-shadow: 0 0 20px rgba(0, 242, 254, 0.3);
+}
+
+/* Project Cards & Nodes */
+.project-card {
+    background: var(--surface-color);
+    border: 1px solid #2a2a2a;
+    border-radius: 12px;
+    padding: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    transition: transform 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    border-color: #444;
+}
+
+.tag {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--accent-glow);
+}
+
+/* Architecture Flow Styling */
+.node-flow {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #000;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #333;
+}
+
+.node {
+    background: #222;
+    padding: 10px 15px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    border: 1px solid #444;
+}
+
+.active-node {
+    border-color: var(--accent-glow);
+    box-shadow: 0 0 10px rgba(0, 242, 254, 0.2);
+}
+
+.arrow {
+    color: var(--text-secondary);
+}
+
+/* Navigation Styling for Dark Theme */
+header {
+    padding: 2rem 5%;
+    display: flex;
+    justify-content: center;
+    background-color: var(--bg-color);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 3rem;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--accent-glow);
+    text-shadow: 0 0 10px rgba(0, 242, 254, 0.3);
+}
+
+/* Section & Typography Styling */
+.section {
+    max-width: 900px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+}
+
+.section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.section h2 {
+    font-size: 2rem;
+    color: var(--text-primary);
+    border-bottom: 1px solid #333;
+    padding-bottom: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+/* Card Styling for Dark Theme */
+.card {
+    background: var(--surface-color);
+    border: 1px solid #2a2a2a;
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: border-color 0.3s ease;
+}
+
+.card:hover {
+    border-color: #444;
+}
+
+.card h3 {
+    margin-top: 0;
+    color: var(--text-primary);
+    font-size: 1.4rem;
+    margin-bottom: 0.2rem;
+}
+
+.company {
+    color: var(--accent-glow);
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+}
+
+.card ul {
+    color: var(--text-secondary);
+    padding-left: 1.2rem;
+    margin: 0;
+}
+
+.card ul li {
+    margin-bottom: 0.8rem;
+    line-height: 1.6;
+}
+
+/* Contact Form Styling */
+.contact-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 1.5rem 2rem;
+    margin-top: 2rem;
+}
+
+.name-group { grid-column: 1 / 2; grid-row: 1 / 2; }
+.email-group { grid-column: 1 / 2; grid-row: 2 / 3; }
+.submit-group { grid-column: 1 / 2; grid-row: 3 / 4; margin-top: 1rem; }
+.message-group { 
+    grid-column: 2 / 3; 
+    grid-row: 1 / 4; 
+    display: flex; 
+    flex-direction: column; 
+}
+
+.input-group label {
+    display: block;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+}
+
+.input-group input,
+.input-group textarea {
+    width: 100%;
+    background: #111;
+    border: 1px solid #222;
+    border-radius: 8px;
+    padding: 1rem;
+    color: var(--text-primary);
+    font-family: inherit;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+.input-group textarea {
+    flex-grow: 1;
+    resize: vertical;
+    min-height: 150px;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+    outline: none;
+    border-color: var(--accent-glow);
+}
+
+/* White Submit Button */
+.submit-btn {
+    background: var(--text-primary);
+    color: #000;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.submit-btn:hover {
+    background: #ccc;
+}
+
+/* Base button styles to format social links properly */
+.btn {
+    display: inline-block;
+    background: var(--text-primary);
+    color: #000;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    text-decoration: none;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background: #ccc;
+}
+
+/* Footer Styling */
+.site-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 5%;
+    border-top: 1px solid #1a1a1a;
+    background: #050505;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-top: 4rem;
+}
+
+.footer-left {
+    font-weight: bold;
+    color: var(--text-primary);
+}
+
+.footer-right a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-right a:hover {
+    color: var(--accent-glow);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .contact-form {
+        grid-template-columns: 1fr;
+    }
+    .name-group, .email-group, .message-group, .submit-group {
+        grid-column: 1 / -1;
+        grid-row: auto;
+    }
+    .site-footer {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+    /* Icon Spacing */
+.btn i {
+    margin-right: 8px;
+    font-size: 1.1rem;
+    vertical-align: middle;
+}
+}
