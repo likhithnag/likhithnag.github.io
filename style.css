@@ -122,6 +122,7 @@ body {
 .arrow {
     color: var(--text-secondary);
 }
+
 /* Navigation Styling for Dark Theme */
 header {
     padding: 2rem 5%;
@@ -152,6 +153,7 @@ header {
     color: var(--accent-glow);
     text-shadow: 0 0 10px rgba(0, 242, 254, 0.3);
 }
+
 /* Section & Typography Styling */
 .section {
     max-width: 900px;
@@ -214,16 +216,16 @@ header {
     margin-bottom: 0.8rem;
     line-height: 1.6;
 }
+
 /* Contact Form Styling */
 .contact-form {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Creates two equal columns */
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto auto;
-    gap: 1.5rem 2rem; /* Row gap, Column gap */
+    gap: 1.5rem 2rem;
     margin-top: 2rem;
 }
 
-/* Positioning elements in the grid */
 .name-group { grid-column: 1 / 2; grid-row: 1 / 2; }
 .email-group { grid-column: 1 / 2; grid-row: 2 / 3; }
 .submit-group { grid-column: 1 / 2; grid-row: 3 / 4; margin-top: 1rem; }
@@ -244,7 +246,7 @@ header {
 .input-group input,
 .input-group textarea {
     width: 100%;
-    background: #111; /* Dark background for inputs */
+    background: #111;
     border: 1px solid #222;
     border-radius: 8px;
     padding: 1rem;
@@ -255,7 +257,7 @@ header {
 }
 
 .input-group textarea {
-    flex-grow: 1; /* Makes textarea fill available height */
+    flex-grow: 1;
     resize: vertical;
     min-height: 150px;
 }
@@ -280,6 +282,27 @@ header {
 }
 
 .submit-btn:hover {
+    background: #ccc;
+}
+
+/* Base button styles to format social links properly */
+.btn {
+    display: inline-block;
+    background: var(--text-primary);
+    color: #000;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    text-decoration: none;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    transition: background 0.3s;
+}
+
+.btn:hover {
     background: #ccc;
 }
 
@@ -314,7 +337,7 @@ header {
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
     .contact-form {
-        grid-template-columns: 1fr; /* Stacks everything to one column on small screens */
+        grid-template-columns: 1fr;
     }
     .name-group, .email-group, .message-group, .submit-group {
         grid-column: 1 / -1;
