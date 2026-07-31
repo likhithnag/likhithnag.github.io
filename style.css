@@ -348,4 +348,10 @@ header {
         gap: 1rem;
         text-align: center;
     }
+    /* Icon Spacing */
+.btn i {
+    margin-right: 8px;
+    font-size: 1.1rem;
+    vertical-align: middle;
+}
 }
