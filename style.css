@@ -1,11 +1,11 @@
 /* Core Dark Theme */
 :root {
-    --bg-color: #8b00e1;
+    --bg-color: #331148;
     --surface-color: #161616;
     --text-primary: #f2f2f2;
     --text-secondary: #a1a1aa;
     --accent-glow: #00f2fe;
-    --accent-dark: #005f8d;
+    --accent-dark: #000406;
 }
 
 body {
