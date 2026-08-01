@@ -1,0 +1,31 @@
+/* ---------- NAV ---------- */
+  header{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    background:rgba(10,4,20,.55);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid rgba(255,255,255,.06);
+  }
+  nav.wrap{
+    display:flex;align-items:center;justify-content:space-between;
+    height:76px;
+  }
+ .logo{
+  width:50px;height:54px;
+  cursor:pointer;
+  image-rendering:pixelated;
+  image-rendering:crisp-edges;
+  object-fit:contain;
+}
+
+  .nav-links{display:flex;gap:44px;list-style:none;}
+  .nav-links a{
+    font-size:15px;font-weight:500;color:var(--text-1);
+    position:relative;padding:6px 0;transition:color .2s;
+  }
+  .nav-links a::after{
+    content:'';position:absolute;left:0;bottom:0;width:0;height:2px;
+    background:var(--accent-2);transition:width .25s;
+  }
+  .nav-links a:hover{color:var(--text-0);}
+  .nav-links a:hover::after{width:100%;}
+  .nav-toggle{display:none;background:none;border:0;color:var(--text-0);font-size:22px;}

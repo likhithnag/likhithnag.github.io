@@ -1,0 +1,6 @@
+/* ---------- SECTION LABEL ---------- */
+  .section{padding:90px 0;}
+  .section-title{
+    font-family:var(--font-head);font-weight:700;font-size:clamp(26px,3.2vw,34px);color:var(--text-0);
+    margin-bottom:44px;
+  }

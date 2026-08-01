@@ -1,0 +1,20 @@
+.contact-cta{
+    font-family:var(--font-head);font-size:clamp(26px,3.4vw,34px);color:var(--text-0);font-weight:700;
+    margin-bottom:60px;
+  }
+  footer{padding:80px 0 50px;border-top:1px solid rgba(255,255,255,.06);margin-top:40px;}
+  footer .section-title{margin-bottom:16px;}
+  footer p{max-width:520px;font-size:14.5px;line-height:1.8;color:var(--text-2);margin-bottom:26px;}
+  .contact-email{
+    font-family:var(--font-head);font-size:18px;color:var(--accent-2);font-weight:600;
+  }
+  footer .social-row{margin-top:30px;}
+  .fine-print{margin-top:60px;font-size:12.5px;color:var(--text-2);opacity:.6;}
+
+  /* sparkle icons */
+  .sparkle{position:absolute;color:var(--accent-2);opacity:.5;font-size:14px;animation:float 5s ease-in-out infinite;}
+  @keyframes float{0%,100%{transform:translateY(0) rotate(0deg);}50%{transform:translateY(-10px) rotate(20deg);}}
+
+  /* reveal */
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease, transform .7s ease;}
+  .reveal.in{opacity:1;transform:translateY(0);}

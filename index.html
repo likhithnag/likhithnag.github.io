@@ -1,158 +1,365 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Likhith N Gowda | Software Developer</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script>
-        const text = "Likhith N Gowda - Software Developer & GenAI Enthusiast";
-        let i = 0;
-        function typeWriter() {
-            if (i < text.length) {
-                document.getElementById("typewriter").innerHTML += text.charAt(i);
-                i++;
-                setTimeout(typeWriter, 50);
-            }
-        }
-        window.onload = typeWriter;
-    </script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Likhith— Portfolio</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="css/variables.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/sections.css">
+<link rel="stylesheet" href="css/nav.css">
+<link rel="stylesheet" href="css/hero.css">
+<link rel="stylesheet" href="css/experience.css">
+<link rel="stylesheet" href="css/education.css">
+<link rel="stylesheet" href="css/orbit.css">
+<link rel="stylesheet" href="css/projects.css">
+<link rel="stylesheet" href="css/contact-form.css">
+<link rel="stylesheet" href="css/footer.css">
+<link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <div class="logo">Likhith N Gowda</div>
-            <br>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <main>
-        <!-- Terminal Hero Section -->
-        <section id="hero" class="hero-section">
-            <div class="terminal-window">
-                <div class="terminal-header">
-                    <span class="dot red"></span>
-                    <span class="dot yellow"></span>
-                    <span class="dot green"></span>
-                </div>
-                <div class="terminal-body">
-                    <p><span class="prompt">> start_session</span></p>
-                    <p><span class="prompt">> initializing introduction_sequence</span></p>
-                    <p class="typewriter-text" id="typewriter"></p>
-                </div>
-            </div>
-            <h1 class="hero-headline">Building reliable backends and the <span class="highlight">Intelligence</span> on top.</h1>
-            <p class="hero-subtext">Transitioning robust Java & SAP architectures into the era of Generative AI and Retrieval-Augmented systems.</p>
-        </section>
+<header>
+  <nav class="wrap">
+    <img class="logo" id="navPet" src="signal-frames/idle-0.png" alt="Signal, my Codex pet" width="50" height="54">
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home">About</a></li>
+      <li><a href="#about">Experience</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#lab">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><i class="fa-solid fa-bars"></i></button>
+  </nav>
+</header>
 
-        <!-- About Section -->
-        <section id="about" class="section">
-            <h1>Hi, I'm <span class="highlight">Likhith N Gowda</span></h1>
-            <h2>A Passionate Software Developer & GENAi Enthusiast</h2>
-            <!-- <a href="#experience" class="btn">View My Work</a> -->
-            <div class="submit-group">
-                    <a href="#experience" class="submit-btn" style="text-decoration: none; display: inline-block; text-align: center;">View My Work</a>
-                </div>
-            <p>I specialize in Java and SAP technologies, focused on building efficient, scalable, and robust software solutions.</p>
-        </section>
-        
-        <!-- Resume Section -->
-        <section id="resume" class="section">
-            <h3>Resume</h3>
-            <p>For a detailed overview of my professional journey, please download my resume.</p>
-            <div class="submit-group">
-                <a href="resume.pdf" download="Likhith_N_Gowda_Resume.pdf" class="submit-btn" style="text-decoration: none; display: inline-block; text-align: center;">Download Resume</a>
-            </div>
-        </section>
+<main>
+  <!-- HERO -->
+  <section class="hero wrap" id="home">
+    <div class="hero-top">
+      <div class="avatar-wrap">
+        <div class="avatar-glow"></div>
+        <div class="avatar">
+          <!-- simple placeholder character illustration -->
+          <!-- <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="100" cy="205" rx="70" ry="55" fill="#2c1a52"/>
+            <circle cx="100" cy="95" r="52" fill="#f2c9a0"/>
+            <path d="M50 90 Q55 30 100 30 Q145 30 150 90 Q145 60 100 55 Q55 60 50 90Z" fill="#241030"/>
+            <circle cx="80" cy="100" r="5" fill="#241030"/>
+            <circle cx="120" cy="100" r="5" fill="#241030"/>
+            <path d="M85 118 Q100 128 115 118" stroke="#241030" stroke-width="3" stroke-linecap="round" fill="none"/>
+            <rect x="60" y="150" width="80" height="50" rx="6" fill="#e9e4f5"/>
+            <rect x="66" y="156" width="68" height="38" rx="3" fill="#3a2c60"/>
+          </svg> -->
+          <img src="DP_portfolio-removebg-preview.png" alt="Likhith N Gowda" class="profile-avatar">
+        </div>
+        <div class="speech-bubble">Hello! I Am <span>Likhith</span></div>
+      </div>
 
-        <!-- Experience Section -->
-        <section id="experience" class="section">
-            <h2>Professional Experience</h2>
-            <div class="project-card">
-                <div class="project-info">
-                    <span class="tag">Software Developer</span>
-                    <h3>SAP Labs India</h3>
-                    <ul style="color: var(--text-secondary); padding-left: 1.2rem; margin-top: 1rem; line-height: 1.6;">
-                        <li>Developed and maintained enterprise-level applications utilizing Java and SAP technologies.</li>
-                        <li>Collaborated with cross-functional teams to deliver scalable software solutions.</li>
-                    </ul>
-                </div>
-                
-                <!-- Architecture Flow Node -->
-                <div class="node-flow">
-                    <div class="node">Java</div>
-                    <div class="arrow">→</div>
-                    <div class="node active-node">SAP Ecosystem</div>
-                </div>
-            </div>
-        </section>
+      <div class="hero-headline">
+        <div class="eyebrow">An Engineer who</div>
+        <h1 class="headline">Judges a book<br>by its <span class="circled">cover</span>…</h1>
+        <div class="sub-headline">Because if the cover does not impress you, what else can?</div>
+      </div>
+    </div>
+    <div class="hero-decor">
+  <div class="status-badge">
+    <span class="status-dot"></span> Currently open to opportunities
+  </div>
 
-        <!-- Education Section -->
-        <section id="education" class="section">
-            <h2>Education</h2>
-            <div class="project-card">
-                <div class="project-info">
-                    <span class="tag">Postgraduate</span>
-                    <h3>Masters in Software Engineering</h3>
-                    <p style="color: var(--text-secondary); margin-top: 0.5rem; font-size: 1.1rem;">BITS Pilani</p>
-                </div>
-                <br>
-                <div class="project-info">
-                    <span class="tag">Graduate</span>
-                    <h3>Bachelors in Electronics and Communication Engineering</h3>
-                    <p style="color: var(--text-secondary); margin-top: 0.5rem; font-size: 1.1rem;">Alva's Institute of Engineering and Technology</p>
-                </div>
-            </div>
-        </section>
+  <div class="hero-decor">
+  <div class="status-badge">
+    <span class="status-dot"></span> Currently open to opportunities
+  </div>
 
-        <!-- Social Links Contact Section -->
-        <section id="contact" class="section">
-            <h2>Get In Touch</h2>
-            <p>Ready to collaborate? Let's connect.</p>
-            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=likhithgowda533@gmail.com" class="btn" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-envelope"></i>Email Me</a>
-            <a href="https://github.com/naggowda" class="btn" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i>GitHub</a>
-            <br>
-            <a href="https://www.linkedin.com/in/likhith-n-gowda-377974175?utm_source=share_via&utm_content=profile&utm_medium=member_ios" class="btn" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i>LinkedIn</a>
-            <a href="https://www.instagram.com/blatant.soul?igsh=Nm12ZWE1OGxvN2U5&utm_source=qr" class="btn" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i>Instagram</a>
-        </section>
+  <div class="stat-card stat-card-1">
+    <span class="stat-num">2+</span>
+    <span class="stat-label">Years Experience</span>
+  </div>
 
-        <!-- Contact Form Section -->
-        <section id="contact-form" class="section">
-            <h2>Got Something for me? Fill It Out, Let's Talk!</h2>
-            <form class="contact-form" action="https://formspree.io/f/mlgqkgzr" method="POST">
-                <div class="input-group name-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name">
-                </div>
-                
-                <div class="input-group email-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email">
-                </div>
-                
-                <div class="input-group message-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message"></textarea>
-                </div>
-                
-                <div class="submit-group">
-                    <button type="submit" class="submit-btn">Get In Touch ↗</button>
-                </div>
-            </form>
-        </section>
-    </main>
+  <div class="stat-card stat-card-2">
+    <span class="stat-num">GenAI</span>
+    <span class="stat-label">Enthusiast</span>
+  </div>
 
-    <!-- Footer -->
-    <footer class="site-footer">
-        <div class="footer-right"><a href="#">Back to top &uarr;</a></div>
-        <p>&copy; 2026 Likhith N Gowda</p>
-    </footer>
+  <i class="fa-solid fa-asterisk sparkle sp1"></i>
+  <i class="fa-solid fa-asterisk sparkle sp2"></i>
+</div>
+
+  <i class="fa-solid fa-asterisk sparkle sp1"></i>
+  <i class="fa-solid fa-asterisk sparkle sp2"></i>
+  <i class="fa-solid fa-asterisk sparkle sp3"></i>
+  <i class="fa-solid fa-asterisk sparkle sp4"></i>
+</div>
+
+    <div class="role-line" id="typedRole"></div>
+    <!-- <div class="role-sub">
+      Currently, I'm a Software Engineer at <i class="fa-brands fa-facebook"></i> <a href="#">Your Company</a>,
+    </div> -->
+
+    <p class="about-p">
+      A software Engineer, Gen AI Enthusiast and a self-taught UI/UX designer, functioning in the industry for 2+ years now.
+      I make meaningful and delightful digital products that create an equilibrium
+      between user needs and business goals.
+    </p>
+
+    <div class="social-row">
+      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=likhith.nagaraju.works@gmail.com" class="btn" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-envelope"></i></a>
+      <a href="https://www.linkedin.com/in/likhith-n-gowda-377974175?utm_source=share_via&utm_content=profile&utm_medium=member_ios" class="btn" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i></a>
+      <a href="https://www.instagram.com/blatant.soul?igsh=Nm12ZWE1OGxvN2U5&utm_source=qr" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://github.com/naggowda" class="btn" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
+    </div>
+  </section>
+
+  <!-- WORK EXPERIENCE -->
+  <section class="section wrap reveal" id="about">
+    <h2 class="section-title">Work Experience</h2>
+    <div class="exp-grid">
+      <div class="exp-card">
+        <div class="exp-icon"><i class="fa-solid fa-bookmark"></i></div>
+        <div>
+          <h3>Enterprise Legacy Modernization: Java 8 to 17</h3>
+          <p>Orchestrated a comprehensive, end-to-end migration of a legacy Java 8 codebase to Java 17. Systematically eradicated years of technical debt by refactoring core architecture to align with modern Java standards. Executed a massive overhaul of the testing infrastructure, migrating legacy PowerMockito implementations to standard Mockito, ensuring zero-regression deployment and significantly improving future maintainability.</p>
+          <!-- <a class="btn-outline" href="#">Learn More</a> -->
+        </div>
+      </div>
+      <div class="exp-card">
+        <div class="exp-icon"><i class="fa-solid fa-lightbulb"></i></div>
+        <div>
+          <h3>Zero-Touch Beta Validation Pipeline</h3>
+          <p>Engineered an automated testing framework using Selenium to monitor and validate Beta feature availability within live tenant environments. By replacing tedious manual checks with resilient automation workflows, I minimized human error and reclaimed hours of developer bandwidth for high-impact architectural initiatives.</p>
+          <!-- <a class="btn-outline" href="#">Learn More</a> -->
+        </div>
+      </div>
+      <div class="exp-card">
+        <div class="exp-icon"><i class="fa-solid fa-mug-hot"></i></div>
+        <div>
+          <h3>Intelligent Dynatrace Observability & Threat Detection</h3>
+          <p>Spearheaded the development of a comprehensive system health dashboard using Dynatrace to proactively monitor request-response latencies and critical architectural metrics. Designed a robust security perimeter by implementing automated threshold alerts, ensuring stakeholders are instantly notified of abnormal API behaviors to thwart potential breaches before escalation.</p>
+          <!-- <a class="btn-outline" href="#">Learn More</a> -->
+        </div>
+      </div>
+      <div class="exp-card">
+        <div class="exp-icon"><i class="fa-solid fa-gavel"></i></div>
+        <div>
+          <h3>SAP Fiori State Management & UX Automation</h3>
+          <p>Drove the scalable adoption of SAP Fiori Elements across enterprise applications by engineering robust foundational tools in collaboration with infrastructure teams. Resolved a critical user experience bottleneck by architecting an automated state-sync mechanism for the platform's custom tile generation. This intelligent logic dynamically intercepts unsaved UI filter states and automatically triggers data retrieval, ensuring flawless appstate preservation without manual user intervention.</p>
+          <!-- <a class="btn-outline" href="#">Learn More</a> -->
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="resume-inline">
+      <p>Want a deep dive? Grab a copy of my resume.</p>
+      <a class="resume-btn" href="Likhith_resume.pdf" download><i class="fa-solid fa-download"></i> Download Resume</a>
+    </div>
+  </section>
+  </section>
+  <!-- EDUCATION -->
+  <section class="section wrap reveal">
+    <h2 class="section-title" id="education">Education</h2>
+    <div class="edu-timeline">
+      <div class="edu-item">
+        <div class="edu-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+        <div class="edu-card">
+          <div class="edu-top-row">
+            <h3>Master's in Software Engineering</h3>
+            <span class="edu-years">2022 — 2024</span>
+          </div>
+          <div class="edu-school">Birla Institute of Technology and Science, Pilani</div>
+          <p class="edu-desc">Postgraduate degree focus, relevant coursework, thesis topic, or specialization worth highlighting.</p>
+        </div>
+      </div>
+      <div class="edu-item">
+        <div class="edu-icon"><i class="fa-solid fa-book-open"></i></div>
+        <div class="edu-card">
+          <div class="edu-top-row">
+            <h3>Bachelor's in Electronics and Communication Engineering</h3>
+            <span class="edu-years">2018 — 2022</span>
+          </div>
+          <div class="edu-school">Alva's Institute of Engineering and Technology, Mangalore</div>
+          <p class="edu-desc">Undergraduate degree focus, honors, relevant coursework, or achievements worth highlighting.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- STACK -->
+  <section class="stack-section wrap reveal">
+    <h3 class="stack-title">I'm currently looking to join a <span class="accent">cross-functional</span> team</h3>
+    <p class="stack-sub">that values improving people's lives through accessible design</p>
+
+    <div class="orbit">
+      <div class="orbit-ring r1"></div>
+      <div class="orbit-ring r2"></div>
+      <div class="orbit-ring r3"></div>
+      <div class="orbit-core"><i class="fa-solid fa-bolt"></i></div>
+      <div class="orbit-icons" id="orbitIcons"></div>
+    </div>
+  </section>
+
+  <!-- FEATURED PROJECT 1
+  <section class="section wrap" id="lab">
+    <div class="project reveal">
+      <div class="project-text">
+        <div class="project-tag">Featured Project</div>
+        <h3 class="project-title">Example Project</h3>
+        <p class="project-desc">
+          Describe the problem this project solved, who it was for, and the outcome.
+          Mention the tools you used and one metric or result you're proud of.
+        </p>
+      </div>
+      <div class="project-shot">
+        <div class="mock-bar"><span></span><span></span><span></span></div>
+        <h4>This headline reflects my personality</h4>
+        <p>Who am I? A short block of text that showcases your professional experience and the thing that sets your work apart.</p>
+        <div class="placeholder-box">Project preview</div>
+      </div>
+    </div>
+
+    <!-- FEATURED PROJECT 2 -->
+    <!-- <div class="project reverse reveal">
+      <div class="project-shot">
+        <div class="mock-bar"><span></span><span></span><span></span></div>
+        <h4>Easy &amp; Affordable</h4>
+        <p>Opportunity — a short block of text describing the challenge this project addressed.</p>
+        <div class="placeholder-box">Project preview</div>
+      </div>
+      <div class="project-text">
+        <div class="project-tag">Featured Project</div>
+        <h3 class="project-title">Example Project</h3>
+        <p class="project-desc">
+          Describe the problem this project solved, who it was for, and the outcome.
+          Mention the tools you used and one metric or result you're proud of.
+        </p>
+      </div>
+    </div>
+  </section> -->
+  <section class="section wrap projects-section" id="lab">
+  <h2 class="section-title">Featured Projects</h2>
+
+  <div class="projects-stack">
+
+    <!-- PROJECT 01 -->
+    <article class="project-card" style="--index:0">
+      <div class="project-card-inner">
+        <div class="project-left">
+          <div class="project-number">01</div>
+          <div class="project-meta">
+            <span class="project-category">Category Label</span>
+            <h3 class="project-heading">Project Title</h3>
+          </div>
+          <p class="project-summary">One-line summary of what this project is.</p>
+          <p class="project-detail">
+            A couple of sentences on the problem, your approach, and the outcome.
+            Keep it tight — this is the pitch, not the full case study.
+          </p>
+          <div class="tech-tags">
+            <span class="tech-tag">Tech 1</span>
+            <span class="tech-tag">Tech 2</span>
+            <span class="tech-tag">Tech 3</span>
+          </div>
+        </div>
+
+        <!-- OPTIONAL: only include this block for projects where a flow diagram makes sense -->
+        <div class="project-flow">
+          <div class="flow-step">Step One</div>
+          <div class="flow-step">Step Two</div>
+          <div class="flow-step">Step Three</div>
+          <div class="flow-step">Step Four</div>
+        </div>
+      </div>
+    </article>
+
+    <!-- PROJECT 02 -->
+    <article class="project-card" style="--index:1">
+      <div class="project-card-inner">
+        <div class="project-left">
+          <div class="project-number">02</div>
+          <div class="project-meta">
+            <span class="project-category">Category Label</span>
+            <h3 class="project-heading">Project Title</h3>
+          </div>
+          <p class="project-summary">One-line summary of what this project is.</p>
+          <p class="project-detail">
+            A couple of sentences on the problem, your approach, and the outcome.
+          </p>
+          <div class="tech-tags">
+            <span class="tech-tag">Tech 1</span>
+            <span class="tech-tag">Tech 2</span>
+          </div>
+        </div>
+        <div class="project-flow">
+          <div class="flow-step">Step One</div>
+          <div class="flow-step">Step Two</div>
+          <div class="flow-step">Step Three</div>
+          <div class="flow-step">Step Four</div>
+        </div>
+
+        <!-- no .project-flow here — a project without a pipeline just omits this block entirely -->
+      </div>
+    </article>
+
+    <!-- add more <article class="project-card" style="--index:2"> etc. for additional projects -->
+
+  </div>
+</section>
+    <!-- CONTACT FORM -->
+  <section id="contact-form" class="section wrap reveal">
+    <h2>Got Something for me? Fill It Out, Let's Talk!</h2>
+    <form class="contact-form" action="https://formspree.io/f/mlgqkgzr" method="POST">
+      <div class="input-group name-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Your name">
+      </div>
+
+      <div class="input-group email-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="you@example.com">
+      </div>
+
+      <div class="input-group message-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" placeholder="Tell me a bit about your intent..."></textarea>
+      </div>
+
+      <div class="submit-group">
+        <button type="submit" class="submit-btn">Get In Touch ↗</button>
+      </div>
+    </form>
+  </section>
+  <script>
+        // This runs every time the page is shown, even if loaded from the browser's back button cache
+        window.addEventListener('pageshow', function(event) {
+            const contactForm = document.querySelector('.contact-form');
+            if (contactForm) {
+                contactForm.reset();
+            }
+        });
+    </script>
+</body>
+</html>
+</main>
+
+<footer class="wrap reveal">
+  <h2 class="section-title" id="contact">Contact</h2>
+  <p>I'm currently looking to join a cross-functional team that values improving people's lives
+  through accessible design, or have a project in mind? Let's connect.</p>
+  <a class="contact-email" href="mailto:likhith.nagaraju.works@gmail.com">likhith.nagaraju.works@gmail.com</a>
+
+  <div class="social-row">
+    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=likhith.nagaraju.works@gmail.com" class="btn" target="_blank" rel="noopener noreferrer" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+    <a href="https://www.linkedin.com/in/likhith-n-gowda-377974175?utm_source=share_via&utm_content=profile&utm_medium=member_ios" class="btn" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+  </div>
+
+  <div class="fine-print">© <span id="year"></span> Likhith N Gowda. Built with care.</div>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>

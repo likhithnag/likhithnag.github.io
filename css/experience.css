@@ -1,0 +1,40 @@
+.exp-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;}
+  .exp-card{
+    background:linear-gradient(150deg,var(--card-2),var(--card));
+    border:1px solid var(--border);border-radius:var(--radius);
+    padding:30px;display:flex;gap:20px;align-items:flex-start;
+    transition:transform .3s,box-shadow .3s,border-color .3s;
+  }
+  .exp-card:hover{transform:translateY(-6px);border-color:var(--accent-2);box-shadow:0 20px 40px rgba(0,0,0,.35);}
+  .exp-icon{
+    width:56px;height:56px;border-radius:14px;flex-shrink:0;
+    background:radial-gradient(circle at 30% 30%, var(--accent-2), var(--accent) 60%, #4c1f8f 100%);
+    display:flex;align-items:center;justify-content:center;font-size:22px;color:#160a2c;
+    box-shadow:0 8px 24px var(--accent-glow);
+  }
+  .exp-card h3{font-family:var(--font-head);color:var(--text-0);font-size:19px;margin-bottom:8px;}
+  .exp-card p{font-size:13.5px;color:var(--text-2);line-height:1.6;margin-bottom:16px;}
+  .btn-outline{
+    display:inline-block;padding:8px 18px;border:1px solid var(--accent-2);border-radius:20px;
+    font-size:12px;font-weight:600;letter-spacing:.03em;color:var(--accent-2);
+    transition:all .25s;
+  }
+  .btn-outline:hover{background:var(--accent-2);color:#0a0414;}
+  /* ---------- RESUME (inline, under Work Experience) ---------- */
+.resume-inline{
+  margin-top:36px;padding-top:32px;border-top:1px solid var(--border);
+  display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;
+}
+.resume-inline p{
+  font-family:var(--font-head);font-weight:700;color:var(--text-0);
+  font-size:clamp(24px,3vw,30px);
+}
+.resume-btn{
+  flex-shrink:0;display:inline-flex;align-items:center;gap:10px;
+  background:linear-gradient(135deg,var(--accent-2),var(--accent));
+  color:#0a0414;border:none;border-radius:14px;
+  padding:13px 26px;font-family:var(--font-head);font-weight:700;font-size:14.5px;
+  cursor:pointer;transition:transform .25s,box-shadow .25s;
+  box-shadow:0 10px 28px var(--accent-glow);
+}
+.resume-btn:hover{transform:translateY(-3px);box-shadow:0 16px 36px var(--accent-glow);}

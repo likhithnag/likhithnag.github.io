@@ -1,0 +1,17 @@
+:root{
+    --bg-0:#0a0414;
+    --bg-1:#150a28;
+    --bg-2:#1d0f38;
+    --card:#1a0e33;
+    --card-2:#241246;
+    --accent:#9b6bff;
+    --accent-2:#c9a6ff;
+    --accent-glow:rgba(155,107,255,.45);
+    --text-0:#f4f0ff;
+    --text-1:#c7bfe0;
+    --text-2:#8f84b3;
+    --border:rgba(155,107,255,.18);
+    --radius:20px;
+    --font-head:'Baloo 2', system-ui, sans-serif;
+    --font-body:'Inter', system-ui, sans-serif;
+  }
