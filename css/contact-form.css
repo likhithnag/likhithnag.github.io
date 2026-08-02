@@ -20,7 +20,7 @@
   .input-group textarea{
     width:100%;background:var(--bg-1);border:1px solid var(--border);
     border-radius:12px;padding:13px 16px;color:var(--text-0);
-    font-family:var(--font-body);font-size:14.5px;
+    font-family:var(--font-body);font-size:16px;
     transition:border-color .25s,box-shadow .25s;
   }
   .input-group input::placeholder,

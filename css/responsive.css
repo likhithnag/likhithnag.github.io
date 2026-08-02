@@ -9,4 +9,34 @@
     .project.reverse .project-shot{order:2;}
     .speech-bubble{position:static;margin-top:14px;white-space:normal;}
     .hero-top{flex-direction:column;}
+    .hero-top{
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+}
+.avatar-wrap{
+  margin:0 auto;
+}
+.hero-headline{
+  margin-top:24px;
+  max-width:100%;
+}
+.sub-headline{
+  margin-left:auto;
+  margin-right:auto;
+}
+.role-line{
+  text-align:center;
+}
+.role-sub{
+  text-align:center;
+}
+.about-p{
+  margin-left:auto;
+  margin-right:auto;
+  text-align:center;
+}
+.social-row{
+  justify-content:center;
+}
   }
