@@ -45,7 +45,7 @@
   .sub-headline{margin-top:10px;font-size:14px;color:var(--text-2);max-width:420px;}
 
   .role-line{
-    margin-top:90px;font-family:var(--font-head);font-weight:700;
+    margin-top:72px;font-family:var(--font-head);font-weight:700;
     font-size:clamp(26px,3.4vw,34px);color:var(--text-0);
   }
   .role-line .cursor{
@@ -57,7 +57,8 @@
   .role-sub .fa-facebook{color:#5c8bf7;margin:0 2px;}
   .role-sub a{color:var(--accent-2);font-weight:600;}
 
-  .about-p{margin-top:34px;max-width:640px;font-size:16px;line-height:1.85;color:var(--text-1);}
+  .about-p{margin-top:24px;max-width:640px;font-size:16px;line-height:1.85;color:var(--text-1);}
+  .about-p-aside{margin-top:12px;font-size:16px;color:var(--text-2);}
 
   .social-row{display:flex;gap:16px;margin-top:34px;}
   .social-row a{

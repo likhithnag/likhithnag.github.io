@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Likhith— Portfolio</title>
-<link rel="icon" type="image/png" href="favicon.png">
+<link rel="icon" type="image/png" href="assests\ninja-pet\ninja-favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -25,12 +25,12 @@
 
 <header>
   <nav class="wrap">
-    <img class="logo" id="navPet" src="signal-frames/idle-0.png" alt="Signal, my Codex pet" width="50" height="54">
+    <img class="logo" id="navPet" src="assests\ninja-pet\idle-0.png" alt="Ninja, my Codex pet" width="50" height="54">
     <ul class="nav-links" id="navLinks">
       <li><a href="#home">About</a></li>
       <li><a href="#about">Experience</a></li>
       <li><a href="#education">Education</a></li>
-      <li><a href="#lab">Projects</a></li>
+      <li><a href="#projects">Projects</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
     <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><i class="fa-solid fa-bars"></i></button>
@@ -55,7 +55,7 @@
             <rect x="60" y="150" width="80" height="50" rx="6" fill="#e9e4f5"/>
             <rect x="66" y="156" width="68" height="38" rx="3" fill="#3a2c60"/>
           </svg> -->
-          <img src="DP_portfolio-removebg-preview.png" alt="Likhith N Gowda" class="profile-avatar">
+          <img src="assests\DP_portfolio-removebg-preview.png" alt="Likhith N Gowda" class="profile-avatar">
         </div>
         <div class="speech-bubble">Hello! I Am <span>Likhith</span></div>
       </div>
@@ -102,62 +102,85 @@
     </div> -->
 
     <p class="about-p">
-      A software Engineer, Gen AI Enthusiast and a self-taught UI/UX designer, functioning in the industry for 2+ years now.
-      I make meaningful and delightful digital products that create an equilibrium
-      between user needs and business goals.
+      <span class="accent"><Strong>The Builder</Strong></span><br>
+A Software Engineer, Gen AI Enthusiast, and a self-taught UI/UX designer. For the past 2+ years, I’ve been making meaningful and delightful digital products that create an equilibrium between user needs and business goals.
+    </p>
+    <p class="about-p about-p-aside">
+      <span class="accent"><Strong>The Culture Catalyst</Strong></span><br>
+      <strong>Booked Courts, Built Culture</strong> — Turns out morale scales too. Organized regular after-hours cricket and badminton sessions that did more for team cohesion than any all-hands meeting.
     </p>
 
     <div class="social-row">
       <a href="https://mail.google.com/mail/?view=cm&fs=1&to=likhith.nagaraju.works@gmail.com" class="btn" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-envelope"></i></a>
       <a href="https://www.linkedin.com/in/likhith-n-gowda-377974175?utm_source=share_via&utm_content=profile&utm_medium=member_ios" class="btn" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i></a>
       <a href="https://www.instagram.com/blatant.soul?igsh=Nm12ZWE1OGxvN2U5&utm_source=qr" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
-      <a href="https://github.com/naggowda" class="btn" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
+      <a href="https://github.com/likhithnag" class="btn" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
     </div>
   </section>
 
   <!-- WORK EXPERIENCE -->
-  <section class="section wrap reveal" id="about">
+  <section class="section wrap" id="about">
     <h2 class="section-title">Work Experience</h2>
-    <div class="exp-grid">
-      <div class="exp-card">
-        <div class="exp-icon"><i class="fa-solid fa-bookmark"></i></div>
-        <div>
-          <h3>Enterprise Legacy Modernization: Java 8 to 17</h3>
-          <p>Orchestrated a comprehensive, end-to-end migration of a legacy Java 8 codebase to Java 17. Systematically eradicated years of technical debt by refactoring core architecture to align with modern Java standards. Executed a massive overhaul of the testing infrastructure, migrating legacy PowerMockito implementations to standard Mockito, ensuring zero-regression deployment and significantly improving future maintainability.</p>
-          <!-- <a class="btn-outline" href="#">Learn More</a> -->
+    <div class="exp-timeline">
+
+      <div class="exp-role">
+        <div class="exp-role-head">
+          <span class="exp-role-year">2022 – 2023</span>
+          <h3 class="exp-role-title">SAP UI5/Fiori Frontend Engineer</h3>
+        </div>
+        <div class="exp-role-cards">
+          <div class="exp-card exp-card-wide">
+            <div class="exp-icon"><i class="fa-solid fa-people-group"></i></div>
+            <div>
+              <h3>Synergy Bytes: Cross-Team Knowledge Workshops</h3>
+              <p>Founded and organized "Synergy Bytes," a recurring workshop series bridging teams across the SAP UX Engineering line of business in Bangalore. Sessions distilled emerging SAP UX advancements into practical, actionable knowledge, building cross-team awareness and cutting down duplicated effort across parallel initiatives.</p>
+            </div>
+          </div>
+          <div class="exp-card">
+            <div class="exp-icon"><i class="fa-solid fa-gavel"></i></div>
+            <div>
+              <h3>SAP Fiori State Management & UX Automation</h3>
+              <p>Drove the scalable adoption of SAP Fiori Elements across enterprise applications by engineering robust foundational tools in collaboration with infrastructure teams. Resolved a critical user experience bottleneck by architecting an automated state-sync mechanism for the platform's custom tile generation. This intelligent logic dynamically intercepts unsaved UI filter states and automatically triggers data retrieval, ensuring flawless appstate preservation without manual user intervention.</p>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="exp-card">
-        <div class="exp-icon"><i class="fa-solid fa-lightbulb"></i></div>
-        <div>
-          <h3>Zero-Touch Beta Validation Pipeline</h3>
-          <p>Engineered an automated testing framework using Selenium to monitor and validate Beta feature availability within live tenant environments. By replacing tedious manual checks with resilient automation workflows, I minimized human error and reclaimed hours of developer bandwidth for high-impact architectural initiatives.</p>
-          <!-- <a class="btn-outline" href="#">Learn More</a> -->
+
+      <div class="exp-role">
+        <div class="exp-role-head">
+          <span class="exp-role-year">2023 – 2024</span>
+          <h3 class="exp-role-title">SAP BTP (Java) Developer</h3>
+        </div>
+        <div class="exp-role-cards">
+          <div class="exp-card">
+            <div class="exp-icon"><i class="fa-solid fa-bookmark"></i></div>
+            <div>
+              <h3>Enterprise Legacy Modernization: Java 8 to 17</h3>
+              <p>Orchestrated a comprehensive, end-to-end migration of a legacy Java 8 codebase to Java 17. Systematically eradicated years of technical debt by refactoring core architecture to align with modern Java standards. Executed a massive overhaul of the testing infrastructure, migrating legacy PowerMockito implementations to standard Mockito, ensuring zero-regression deployment and significantly improving future maintainability.</p>
+            </div>
+          </div>
+          <div class="exp-card">
+            <div class="exp-icon"><i class="fa-solid fa-lightbulb"></i></div>
+            <div>
+              <h3>Zero-Touch Beta Validation Pipeline</h3>
+              <p>Engineered an automated testing framework using Selenium to monitor and validate Beta feature availability within live tenant environments. By replacing tedious manual checks with resilient automation workflows, I minimized human error and reclaimed hours of developer bandwidth for high-impact architectural initiatives.</p>
+            </div>
+          </div>
+          <div class="exp-card">
+            <div class="exp-icon"><i class="fa-solid fa-mug-hot"></i></div>
+            <div>
+              <h3>Intelligent Dynatrace Observability & Threat Detection</h3>
+              <p>Spearheaded the development of a comprehensive system health dashboard using Dynatrace to proactively monitor request-response latencies and critical architectural metrics. Designed a robust security perimeter by implementing automated threshold alerts, ensuring stakeholders are instantly notified of abnormal API behaviors to thwart potential breaches before escalation.</p>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="exp-card">
-        <div class="exp-icon"><i class="fa-solid fa-mug-hot"></i></div>
-        <div>
-          <h3>Intelligent Dynatrace Observability & Threat Detection</h3>
-          <p>Spearheaded the development of a comprehensive system health dashboard using Dynatrace to proactively monitor request-response latencies and critical architectural metrics. Designed a robust security perimeter by implementing automated threshold alerts, ensuring stakeholders are instantly notified of abnormal API behaviors to thwart potential breaches before escalation.</p>
-          <!-- <a class="btn-outline" href="#">Learn More</a> -->
-        </div>
-      </div>
-      <div class="exp-card">
-        <div class="exp-icon"><i class="fa-solid fa-gavel"></i></div>
-        <div>
-          <h3>SAP Fiori State Management & UX Automation</h3>
-          <p>Drove the scalable adoption of SAP Fiori Elements across enterprise applications by engineering robust foundational tools in collaboration with infrastructure teams. Resolved a critical user experience bottleneck by architecting an automated state-sync mechanism for the platform's custom tile generation. This intelligent logic dynamically intercepts unsaved UI filter states and automatically triggers data retrieval, ensuring flawless appstate preservation without manual user intervention.</p>
-          <!-- <a class="btn-outline" href="#">Learn More</a> -->
-        </div>
-      </div>
-    </div>
+
     </div>
     <div class="resume-inline">
       <p>Want a deep dive? Grab a copy of my resume.</p>
-      <a class="resume-btn" href="Likhith_Resume.pdf" download><i class="fa-solid fa-download"></i> Download Resume</a>
+      <a class="resume-btn" href="assests\Likhith_Resume.pdf" download><i class="fa-solid fa-download"></i> Download Resume</a>
     </div>
-  </section>
   </section>
   <!-- EDUCATION -->
   <section class="section wrap reveal">
@@ -171,7 +194,7 @@
             <span class="edu-years">2022 — 2024</span>
           </div>
           <div class="edu-school">Birla Institute of Technology and Science, Pilani</div>
-          <p class="edu-desc">Postgraduate degree focus, relevant coursework, thesis topic, or specialization worth highlighting.</p>
+          <p class="edu-desc">A rigorous program bridging computer science theory with scalable enterprise practices, building advanced capabilities through comprehensive coursework in Distributed Systems, Data Structures & Algorithms, Cloud Computing, and Software Architecture.</p>
         </div>
       </div>
       <div class="edu-item">
@@ -182,7 +205,7 @@
             <span class="edu-years">2018 — 2022</span>
           </div>
           <div class="edu-school">Alva's Institute of Engineering and Technology, Mangalore</div>
-          <p class="edu-desc">Undergraduate degree focus, honors, relevant coursework, or achievements worth highlighting.</p>
+          <p class="edu-desc">Focused on digital electronics and computational logic to build a strong foundation in analytical problem-solving, bridging the gap between hardware and software.</p>
         </div>
       </div>
     </div>
@@ -191,8 +214,8 @@
 
   <!-- STACK -->
   <section class="stack-section wrap reveal">
-    <h3 class="stack-title">I'm currently looking to join a <span class="accent">cross-functional</span> team</h3>
-    <p class="stack-sub">that values improving people's lives through accessible design</p>
+    <h3 class="stack-title"><span class="accent">Java</span> at the core. Everything else? <span class="accent">Orbiting</span> it.</h3>
+    <p class="stack-sub">The stack below isn't decoration — it's what I actually reach for when Java alone won't cut it.</p>
 
     <div class="orbit">
       <div class="orbit-ring r1"></div>
@@ -203,107 +226,132 @@
     </div>
   </section>
 
-  <!-- FEATURED PROJECT 1
-  <section class="section wrap" id="lab">
-    <div class="project reveal">
-      <div class="project-text">
-        <div class="project-tag">Featured Project</div>
-        <h3 class="project-title">Example Project</h3>
-        <p class="project-desc">
-          Describe the problem this project solved, who it was for, and the outcome.
-          Mention the tools you used and one metric or result you're proud of.
-        </p>
-      </div>
-      <div class="project-shot">
-        <div class="mock-bar"><span></span><span></span><span></span></div>
-        <h4>This headline reflects my personality</h4>
-        <p>Who am I? A short block of text that showcases your professional experience and the thing that sets your work apart.</p>
-        <div class="placeholder-box">Project preview</div>
-      </div>
-    </div>
-
-    <!-- FEATURED PROJECT 2 -->
-    <!-- <div class="project reverse reveal">
-      <div class="project-shot">
-        <div class="mock-bar"><span></span><span></span><span></span></div>
-        <h4>Easy &amp; Affordable</h4>
-        <p>Opportunity — a short block of text describing the challenge this project addressed.</p>
-        <div class="placeholder-box">Project preview</div>
-      </div>
-      <div class="project-text">
-        <div class="project-tag">Featured Project</div>
-        <h3 class="project-title">Example Project</h3>
-        <p class="project-desc">
-          Describe the problem this project solved, who it was for, and the outcome.
-          Mention the tools you used and one metric or result you're proud of.
-        </p>
-      </div>
-    </div>
-  </section> -->
-  <section class="section wrap projects-section" id="lab">
+  
+  <section class="section wrap projects-section" id="projects">
   <h2 class="section-title">Featured Projects</h2>
 
   <div class="projects-stack">
 
     <!-- PROJECT 01 -->
-    <article class="project-card" style="--index:0">
+    <article class="project-card">
       <div class="project-card-inner">
         <div class="project-left">
           <div class="project-number">01</div>
           <div class="project-meta">
-            <span class="project-category">Category Label</span>
-            <h3 class="project-heading">Project Title</h3>
+            <span class="project-category">CORE ARCHITECTURE</span>
+            <h3 class="project-heading">Object-Oriented E-Commerce System</h3>
           </div>
-          <p class="project-summary">One-line summary of what this project is.</p>
+          <p class="project-summary">A robust backend shopping platform engineered entirely with core Java and OOP principles.</p>
           <p class="project-detail">
-            A couple of sentences on the problem, your approach, and the outcome.
-            Keep it tight — this is the pitch, not the full case study.
+            Designed and implemented a modular e-commerce engine featuring distinct administrative and customer workflows. By strictly adhering to object-oriented design, I ensured high cohesion and low coupling across inventory management, dynamic cart mechanics, and checkout processing.
           </p>
           <div class="tech-tags">
-            <span class="tech-tag">Tech 1</span>
-            <span class="tech-tag">Tech 2</span>
-            <span class="tech-tag">Tech 3</span>
+            <span class="tech-tag">Java</span>
+            <span class="tech-tag">OOP</span>
+            <span class="tech-tag">Spring Framework</span>
+            <span class="tech-tag">System Design</span>
           </div>
         </div>
 
         <!-- OPTIONAL: only include this block for projects where a flow diagram makes sense -->
         <div class="project-flow">
-          <div class="flow-step">Step One</div>
-          <div class="flow-step">Step Two</div>
-          <div class="flow-step">Step Three</div>
-          <div class="flow-step">Step Four</div>
+          <div class="flow-pulse"></div>
+          <div class="flow-step">Identity Management</div>
+          <div class="flow-step">Inventory Control</div>
+          <div class="flow-step">Cart/Order Processing</div>
+          <div class="flow-step">Transaction Checkout</div>
         </div>
       </div>
     </article>
 
     <!-- PROJECT 02 -->
-    <article class="project-card" style="--index:1">
+    <article class="project-card">
       <div class="project-card-inner">
         <div class="project-left">
           <div class="project-number">02</div>
           <div class="project-meta">
-            <span class="project-category">Category Label</span>
-            <h3 class="project-heading">Project Title</h3>
+            <span class="project-category">FULL-STACK / REAL-TIME SYSTEMS</span>
+            <h3 class="project-heading">Real-Time Chat Application</h3>
           </div>
-          <p class="project-summary">One-line summary of what this project is.</p>
+          <p class="project-summary">A responsive communication platform engineered with modular React components and low-latency messaging.</p>
           <p class="project-detail">
-            A couple of sentences on the problem, your approach, and the outcome.
+            Built a dynamic, bi-directional chat interface using modern component-driven frontend architecture. Structured the application into highly reusable, decoupled modules for session joining, real-time message rendering, and live participant tracking to deliver a seamless user experience.
           </p>
           <div class="tech-tags">
-            <span class="tech-tag">Tech 1</span>
-            <span class="tech-tag">Tech 2</span>
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">Node.js</span>
+            <span class="tech-tag">WebSocket</span>
           </div>
         </div>
         <div class="project-flow">
-          <div class="flow-step">Step One</div>
-          <div class="flow-step">Step Two</div>
-          <div class="flow-step">Step Three</div>
-          <div class="flow-step">Step Four</div>
+          <div class="flow-pulse"></div>
+          <div class="flow-step">Session & Room Onboarding</div>
+          <div class="flow-step">Live Message Pipeline</div>
+          <div class="flow-step">Workspace & Room Telemetry</div>
+          <div class="flow-step">Active Participant Tracking</div>
         </div>
 
         <!-- no .project-flow here — a project without a pipeline just omits this block entirely -->
       </div>
     </article>
+    <!-- PROJECT 03 -->
+    <article class="project-card" >
+      <div class="project-card-inner">
+        <div class="project-left">
+          <div class="project-number">03</div>
+          <div class="project-meta">
+            <span class="project-category">COMPUTER VISION & AI</span>
+            <h3 class="project-heading">AI-Driven Waste Segregation System</h3>
+          </div>
+          <p class="project-summary">An automated machine learning pipeline leveraging deep learning for environmental sustainability.</p>
+          <p class="project-detail">
+            Engineered as my master's dissertation in software engineering, this project utilizes Python and the fastai library to automatically classify and segregate waste via advanced image processing. The solution encompasses the full machine learning lifecycle, from dataset curation and model training to final architectural documentation and defense.
+          </p>
+          <div class="tech-tags">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Machine Learning</span>
+            <span class="tech-tag">Computer Vision</span>
+            <span class="tech-tag">fastai</span>
+          </div>
+        </div>
+        <div class="project-flow">
+          <div class="flow-pulse"></div>
+          <div class="flow-step">Dataset Engineering</div>
+          <div class="flow-step">Model Training & Validation</div>
+          <div class="flow-step">Inference & Image Processing</div>
+          <div class="flow-step">Architectural Documentation</div>
+        </div>
+      </article>
+
+          <!-- PROJECT 04 -->
+    <article class="project-card" >
+      <div class="project-card-inner">
+        <div class="project-left">
+          <div class="project-number">04</div>
+          <div class="project-meta">
+            <span class="project-category">VANILLA WEB ARCHITECTURE</span>
+            <h3 class="project-heading">Dynamic Task Management Interface</h3>
+          </div>
+          <p class="project-summary">A lightweight, task tracking application built strictly with core web technologies.</p>
+          <p class="project-detail">
+            Engineered a highly responsive, interactive task management tool using pure HTML and vanilla JavaScript. By intentionally avoiding heavy frontend frameworks, this project demonstrates a strong, fundamental mastery of the Document Object Model (DOM), event-driven programming, and direct state manipulation to deliver a fast, seamless user experience.
+          </p>
+          <div class="tech-tags">
+            <span class="tech-tag">HTML</span>
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">CSS</span>
+            <span class="tech-tag">DOM Manipulation</span>
+          </div>
+        </div>
+        <div class="project-flow">
+          <div class="flow-pulse"></div>
+          <div class="flow-step">Semantic UI Framework</div>
+          <div class="flow-step">Event-Driven Logic</div>
+          <div class="flow-step">Dynamic DOM Rendering</div>
+          <div class="flow-step">Architectural Documentation</div>
+        </div>
+      </article>
+
 
     <!-- add more <article class="project-card" style="--index:2"> etc. for additional projects -->
 
@@ -364,6 +412,8 @@
 <script src="js/signal-pet.js"></script>
 <script src="js/orbit.js"></script>
 <script src="js/scroll-reveal.js"></script>
+<script src="js/experience-reveal.js"></script>
+<script src="js/project-glitch.js"></script>
 <script src="js/sparkles.js"></script>
 </body>
 </html>

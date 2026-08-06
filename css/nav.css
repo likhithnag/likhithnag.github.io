@@ -29,3 +29,13 @@
   .nav-links a:hover{color:var(--text-0);}
   .nav-links a:hover::after{width:100%;}
   .nav-toggle{display:none;background:none;border:0;color:var(--text-0);font-size:22px;}
+
+  .ninja-jump{
+  animation: ninja-hop .5s ease-in-out;
+  }
+@keyframes ninja-hop{
+  0%   { transform: translateY(0); }
+  40%  { transform: translateY(-20px); }
+  70%  { transform: translateY(-20px); }
+  100% { transform: translateY(0); }
+}

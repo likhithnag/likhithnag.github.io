@@ -6,7 +6,7 @@
     position:relative;width:380px;height:380px;margin:70px auto 0;
     display:flex;align-items:center;justify-content:center;
     max-width:100%;
-    overflow:hidden;
+    overflow:visible;
   }
   .orbit-ring{
     position:absolute;border:1px solid var(--border);border-radius:50%;
@@ -36,14 +36,57 @@
     position:absolute;top:50%;left:50%;width:0;height:0;
   }
   .orbit-counter{
-    width:44px;height:44px;margin:-22px 0 0 -22px;border-radius:50%;
+    width:44px;height:44px;margin:-22px 0 0 -22px;
+    display:flex;align-items:center;justify-content:center;
+    animation:spin-reverse 38s linear infinite;
+  }
+  /* .orbit-counter: rotation only — never target `transform` here on
+     hover/focus, it already has an active rotation animation and any
+     competing transform declaration causes the tilt glitch. */
+  .orbit-counter:hover, .orbit-counter:focus-visible{
+    z-index:5;
+    animation-play-state:paused;
+  }
+
+  /* .orbit-badge: the visible circle, no rotation animation — safe to
+     scale/glow here on hover without affecting the upright orientation. */
+  .orbit-badge{
+    width:44px;height:44px;border-radius:50%;
     background:var(--card-2);border:1px solid var(--border);
     display:flex;align-items:center;justify-content:center;font-size:17px;color:var(--accent-2);
-    animation:spin-reverse 38s linear infinite;
-    transition:border-color .25s,box-shadow .25s,background .25s;
-    
+    transition:border-color .25s,box-shadow .25s,background .25s,transform .25s;
   }
-  .orbit-counter:hover{border-color:var(--accent-2);box-shadow:0 10px 24px var(--accent-glow);background:var(--card);}
-  .orbit-counter:hover{border-color:var(--accent-2);box-shadow:0 10px 24px var(--accent-glow);background:var(--card);z-index:5;}
-.orbit-counter i{transition:transform .25s;}
-.orbit-counter:hover i{transform:scale(1.5);}
+  .orbit-counter:hover .orbit-badge,
+  .orbit-counter:focus-visible .orbit-badge{
+    border-color:var(--accent-2);
+    box-shadow:0 10px 24px var(--accent-glow);
+    background:var(--card);
+    transform:scale(1.35);
+  }
+  .orbit-badge i{transition:transform .25s;}
+  .orbit-counter:hover .orbit-badge i,
+  .orbit-counter:focus-visible .orbit-badge i{transform:scale(1.1);}
+
+.orbit-tooltip{
+  position:absolute;
+  bottom:calc(100% + 12px);
+  left:50%;
+  transform:translate(-50%, 6px);
+  white-space:nowrap;
+  background:var(--card);
+  border:1px solid var(--border);
+  color:var(--text-0);
+  font-size:12px;
+  font-weight:600;
+  padding:6px 12px;
+  border-radius:8px;
+  pointer-events:none;
+  opacity:0;
+  transition:opacity .2s ease, transform .2s ease;
+  z-index:10;
+}
+.orbit-counter:hover .orbit-tooltip,
+.orbit-counter:focus-visible .orbit-tooltip{
+  opacity:1;
+  transform:translate(-50%, 0);
+}
