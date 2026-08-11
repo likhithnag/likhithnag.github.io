@@ -20,49 +20,68 @@
   .exp-timeline{position:relative;padding-left:36px;}
   .exp-timeline::before{
     content:'';position:absolute;top:6px;left:5px;width:2px;
-    height:0%; /* grown via JS/class once the section is in view */
+    height:var(--spine-fill, 0%); /* set continuously by JS as you scroll */
     background:linear-gradient(var(--accent-2),var(--accent));
-    transition:height 1.1s cubic-bezier(.2,.7,.3,1);
+    transition:height .1s linear; /* smooths out scroll-event jitter without adding lag */
   }
-  .exp-timeline.in-view::before{height:calc(100% - 6px);}
 
   .exp-role{position:relative;margin-bottom:56px;}
   .exp-role:last-child{margin-bottom:0;}
-  .exp-role-head{position:relative;margin-bottom:22px;}
+
+  /* role header — deliberately NOT card-styled, so it reads as a
+     section statement, not another tile in the list */
+  .exp-role-head{
+    position:relative;
+    padding:6px 0 28px;
+    margin-bottom:26px;
+    border-bottom:1px solid var(--border);
+  }
   .exp-role-head::before{
-    content:'';position:absolute;left:-36px;top:6px;width:12px;height:12px;border-radius:50%;
+    content:'';position:absolute;left:-36px;top:10px;width:12px;height:12px;border-radius:50%;
     background:var(--bg-0);border:2px solid var(--accent-2);
     box-shadow:0 0 0 4px var(--bg-1);
     transform:scale(0);transition:transform .3s ease .2s;
   }
-  .exp-role.in-view .exp-role-head::before{transform:scale(1);}
+  .exp-role-head.in-view::before{transform:scale(1);}
   .exp-role-year{
-    font-family:var(--font-head);font-size:12.5px;font-weight:700;letter-spacing:.06em;
-    color:var(--accent-2);text-transform:uppercase;
+    display:inline-block;
+    font-family:var(--font-head);font-size:12px;font-weight:700;letter-spacing:.06em;
+    color:#160a2c;background:linear-gradient(135deg,var(--accent-2),var(--accent));
+    padding:5px 14px;border-radius:20px;text-transform:uppercase;
   }
-  .exp-role-title{font-family:var(--font-head);color:var(--text-0);font-size:22px;margin-top:4px;}
+  .exp-role-title{
+    font-family:var(--font-head);font-weight:800;
+    font-size:clamp(28px,3.6vw,42px);
+    line-height:1.1;
+    margin-top:14px;
+    background:linear-gradient(120deg,var(--text-0) 40%,var(--accent-2));
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    filter:drop-shadow(0 0 26px var(--accent-glow));
+    width:fit-content;
+  }
 
-  .exp-role-cards{display:grid;grid-template-columns:1fr 1fr;gap:22px;}
+  /* all cards same size, stacked one below another */
+  .exp-role-cards{display:flex;flex-direction:column;gap:22px;}
 
-  /* the role block "flips" in from the left as it enters view */
-  .exp-role{
+  /* header fades/rises in on its own */
+  .exp-role-head{
+    opacity:0;transform:translateY(16px);
+    transition:opacity .5s ease, transform .5s ease;
+  }
+  .exp-role-head.in-view{opacity:1;transform:translateY(0);}
+
+  /* each card flips in individually as IT enters view, not as a group */
+  .exp-role-cards .exp-card{
     opacity:0;
     transform:perspective(1000px) rotateY(-25deg) translateX(-60px);
     transform-origin:left center;
-    transition:opacity .7s ease, transform .7s cubic-bezier(.2,.8,.3,1);
+    transition:opacity .6s ease, transform .6s cubic-bezier(.2,.8,.3,1);
   }
-  .exp-role.in-view{opacity:1;transform:perspective(1000px) rotateY(0deg) translateX(0);}
-
-  /* cards within a role appear together, not staggered — they're parallel
-     initiatives within the same role, not a sequence of their own */
-  .exp-role-cards .exp-card{
-    opacity:0;transform:translateY(14px);
-    transition:opacity .5s ease .25s, transform .5s ease .25s;
+  .exp-role-cards .exp-card.in-view{
+    opacity:1;transform:perspective(1000px) rotateY(0deg) translateX(0);
   }
-  .exp-role.in-view .exp-role-cards .exp-card{opacity:1;transform:translateY(0);}
 
   @media (max-width:640px){
-    .exp-role-cards{grid-template-columns:1fr;}
     .exp-timeline{padding-left:28px;}
     .exp-role-head::before{left:-28px;}
   }

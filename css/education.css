@@ -1,7 +1,9 @@
 .edu-timeline{position:relative;max-width:720px;}
   .edu-timeline::before{
-    content:'';position:absolute;left:27px;top:10px;bottom:10px;width:2px;
-    background:linear-gradient(180deg,var(--accent-2),var(--border));
+    content:'';position:absolute;left:27px;top:10px;width:2px;
+    height:var(--edu-spine-fill, 0%); /* scroll-driven fill, same mechanism as Experience */
+    background:linear-gradient(180deg,var(--accent-2),var(--accent));
+    transition:height .1s linear;
   }
   .edu-item{
     position:relative;padding-left:76px;margin-bottom:34px;
@@ -12,11 +14,23 @@
     background:radial-gradient(circle at 30% 30%, var(--accent-2), var(--accent) 60%, #4c1f8f 100%);
     display:flex;align-items:center;justify-content:center;font-size:20px;color:#160a2c;
     box-shadow:0 8px 24px var(--accent-glow);z-index:1;
+    transform:scale(0);transition:transform .3s ease .15s;
   }
+  .edu-item.in-view .edu-icon{transform:scale(1);}
   .edu-card{
     background:linear-gradient(150deg,var(--card-2),var(--card));
     border:1px solid var(--border);border-radius:var(--radius);
-    padding:26px 28px;transition:transform .3s,box-shadow .3s,border-color .3s;
+    padding:26px 28px;
+    transition:transform .3s,box-shadow .3s,border-color .3s,opacity .5s ease .1s;
+  }
+  /* flip-in from the left, same visual language as the Experience cards */
+  .edu-item:not(.in-view) .edu-card{
+    opacity:0;
+    transform:perspective(1000px) rotateY(-25deg) translateX(-60px);
+  }
+  .edu-item.in-view .edu-card{
+    opacity:1;
+    transform:perspective(1000px) rotateY(0deg) translateX(0);
   }
   .edu-card:hover{transform:translateY(-4px);border-color:var(--accent-2);box-shadow:0 20px 40px rgba(0,0,0,.35);}
   .edu-top-row{
@@ -24,8 +38,10 @@
   }
   .edu-card h3{font-family:var(--font-head);color:var(--text-0);font-size:18px;}
   .edu-years{
-    font-size:12.5px;font-weight:600;color:var(--accent-2);
-    border:1px solid var(--border);padding:4px 12px;border-radius:20px;white-space:nowrap;
+    display:inline-block;
+    font-family:var(--font-head);font-size:12.5px;font-weight:700;letter-spacing:.03em;
+    color:#160a2c;background:linear-gradient(135deg,var(--accent-2),var(--accent));
+    padding:5px 14px;border-radius:20px;white-space:nowrap;
   }
   .edu-school{font-size:14px;color:var(--text-1);font-weight:500;margin-bottom:8px;}
   .edu-desc{font-size:13.5px;color:var(--text-2);line-height:1.7;

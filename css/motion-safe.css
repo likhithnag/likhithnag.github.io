@@ -1,0 +1,15 @@
+/* Respect prefers-reduced-motion: collapse every animation/transition to
+   near-instant instead of removing it outright. This keeps all the JS
+   logic that depends on animations completing (class toggles, reveal
+   states, the flip/glitch/orbit effects) working exactly the same —
+   it just stops the actual motion for anyone whose OS has this
+   accessibility setting on, without a separate no-JS code path. */
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto;}
+  *, *::before, *::after{
+    animation-duration:0.01ms !important;
+    animation-iteration-count:1 !important;
+    transition-duration:0.01ms !important;
+    scroll-behavior:auto !important;
+  }
+}

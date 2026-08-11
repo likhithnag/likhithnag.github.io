@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Likhith— Portfolio</title>
-<link rel="icon" type="image/png" href="assests\ninja-pet\ninja-favicon.png">
+<link rel="icon" type="image/png" href="assets/ninja-pet/ninja-favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <link rel="stylesheet" href="css/variables.css">
 <link rel="stylesheet" href="css/base.css">
@@ -20,12 +20,13 @@
 <link rel="stylesheet" href="css/contact-form.css">
 <link rel="stylesheet" href="css/footer.css">
 <link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/motion-safe.css">
 </head>
 <body>
 
 <header>
   <nav class="wrap">
-    <img class="logo" id="navPet" src="assests\ninja-pet\idle-0.png" alt="Ninja, my Codex pet" width="50" height="54">
+    <img class="logo" id="navPet" src="assets/ninja-pet/idle-0.png" alt="Ninja, my Codex pet" width="50" height="54">
     <ul class="nav-links" id="navLinks">
       <li><a href="#home">About</a></li>
       <li><a href="#about">Experience</a></li>
@@ -55,7 +56,7 @@
             <rect x="60" y="150" width="80" height="50" rx="6" fill="#e9e4f5"/>
             <rect x="66" y="156" width="68" height="38" rx="3" fill="#3a2c60"/>
           </svg> -->
-          <img src="assests\DP_portfolio-removebg-preview.png" alt="Likhith N Gowda" class="profile-avatar">
+          <img src="assets/DP_portfolio-removebg-preview.png" alt="Likhith N Gowda" class="profile-avatar">
         </div>
         <div class="speech-bubble">Hello! I Am <span>Likhith</span></div>
       </div>
@@ -71,29 +72,38 @@
     <span class="status-dot"></span> Currently open to opportunities
   </div>
 
-  <div class="hero-decor">
-  <div class="status-badge">
-    <span class="status-dot"></span> Currently open to opportunities
-  </div>
-
-  <div class="stat-card stat-card-1">
+  <a href="#about" class="stat-card stat-card-1 stat-card-link">
     <span class="stat-num">2+</span>
     <span class="stat-label">Years Experience</span>
-  </div>
+  </a>
 
   <div class="stat-card stat-card-2">
     <span class="stat-num">GenAI</span>
     <span class="stat-label">Enthusiast</span>
   </div>
 
-  <i class="fa-solid fa-asterisk sparkle sp1"></i>
-  <i class="fa-solid fa-asterisk sparkle sp2"></i>
-</div>
+  <a href="#projects" class="stat-card stat-card-3 stat-card-link">
+    <span class="stat-num">4</span>
+    <span class="stat-label">Projects Shipped</span>
+  </a>
 
-  <i class="fa-solid fa-asterisk sparkle sp1"></i>
+  <!-- <i class="fa-solid fa-asterisk sparkle sp1"></i>
   <i class="fa-solid fa-asterisk sparkle sp2"></i>
   <i class="fa-solid fa-asterisk sparkle sp3"></i>
-  <i class="fa-solid fa-asterisk sparkle sp4"></i>
+  <i class="fa-solid fa-asterisk sparkle sp4"></i> -->
+
+  <div class="code-card">
+    <div class="code-card-bar">
+      <span class="code-dot"></span><span class="code-dot"></span><span class="code-dot"></span>
+      <span class="code-filename">about.ts</span>
+    </div>
+    <pre class="code-card-body"><code><span class="tok-kw">const</span> <span class="tok-var">engineer</span> = {
+  <span class="tok-prop">name</span>: <span class="tok-str">"Likhith N Gowda"</span>,
+  <span class="tok-prop">stack</span>: [<span class="tok-str">"Java"</span>, <span class="tok-str">"SAPUI5"</span>, <span class="tok-str">"React"</span>],
+  <span class="tok-prop">status</span>: <span class="tok-str">"currently building"</span>,
+  <span class="tok-prop">curious</span>: <span class="tok-bool">true</span>,
+};</code></pre>
+  </div>
 </div>
 
     <div class="role-line" id="typedRole"></div>
@@ -102,11 +112,11 @@
     </div> -->
 
     <p class="about-p">
-      <span class="accent"><Strong>The Builder</Strong></span><br>
-A Software Engineer, Gen AI Enthusiast, and a self-taught UI/UX designer. For the past 2+ years, I’ve been making meaningful and delightful digital products that create an equilibrium between user needs and business goals.
+      A software Engineer, Gen AI Enthusiast and a self-taught UI/UX designer, functioning in the industry for 2+ years now.
+      I make meaningful and delightful digital products that create an equilibrium
+      between user needs and business goals.
     </p>
     <p class="about-p about-p-aside">
-      <span class="accent"><Strong>The Culture Catalyst</Strong></span><br>
       <strong>Booked Courts, Built Culture</strong> — Turns out morale scales too. Organized regular after-hours cricket and badminton sessions that did more for team cohesion than any all-hands meeting.
     </p>
 
@@ -129,18 +139,18 @@ A Software Engineer, Gen AI Enthusiast, and a self-taught UI/UX designer. For th
           <h3 class="exp-role-title">SAP UI5/Fiori Frontend Engineer</h3>
         </div>
         <div class="exp-role-cards">
-          <div class="exp-card exp-card-wide">
-            <div class="exp-icon"><i class="fa-solid fa-people-group"></i></div>
-            <div>
-              <h3>Synergy Bytes: Cross-Team Knowledge Workshops</h3>
-              <p>Founded and organized "Synergy Bytes," a recurring workshop series bridging teams across the SAP UX Engineering line of business in Bangalore. Sessions distilled emerging SAP UX advancements into practical, actionable knowledge, building cross-team awareness and cutting down duplicated effort across parallel initiatives.</p>
-            </div>
-          </div>
           <div class="exp-card">
             <div class="exp-icon"><i class="fa-solid fa-gavel"></i></div>
             <div>
               <h3>SAP Fiori State Management & UX Automation</h3>
               <p>Drove the scalable adoption of SAP Fiori Elements across enterprise applications by engineering robust foundational tools in collaboration with infrastructure teams. Resolved a critical user experience bottleneck by architecting an automated state-sync mechanism for the platform's custom tile generation. This intelligent logic dynamically intercepts unsaved UI filter states and automatically triggers data retrieval, ensuring flawless appstate preservation without manual user intervention.</p>
+            </div>
+          </div>
+          <div class="exp-card exp-card">
+            <div class="exp-icon"><i class="fa-solid fa-people-group"></i></div>
+            <div>
+              <h3>Synergy Bytes: Cross-Team Knowledge Workshops</h3>
+              <p>Founded and organized "Synergy Bytes," a recurring workshop series bridging teams across the SAP UX Engineering line of business in Bangalore. Sessions distilled emerging SAP UX advancements into practical, actionable knowledge, building cross-team awareness and cutting down duplicated effort across parallel initiatives.</p>
             </div>
           </div>
         </div>
@@ -179,11 +189,11 @@ A Software Engineer, Gen AI Enthusiast, and a self-taught UI/UX designer. For th
     </div>
     <div class="resume-inline">
       <p>Want a deep dive? Grab a copy of my resume.</p>
-      <a class="resume-btn" href="assests\Likhith_Resume.pdf" download><i class="fa-solid fa-download"></i> Download Resume</a>
+      <a class="resume-btn" href="assets/Likhith_Resume.pdf" download><i class="fa-solid fa-download"></i> Download Resume</a>
     </div>
   </section>
   <!-- EDUCATION -->
-  <section class="section wrap reveal">
+  <section class="section wrap">
     <h2 class="section-title" id="education">Education</h2>
     <div class="edu-timeline">
       <div class="edu-item">
@@ -359,7 +369,7 @@ A Software Engineer, Gen AI Enthusiast, and a self-taught UI/UX designer. For th
 </section>
     <!-- CONTACT FORM -->
   <section id="contact-form" class="section wrap reveal">
-    <h2>Got Something for me? Fill It Out, Let's Talk!</h2>
+    <h2 class="contact-cta">Got Something for me? Fill It Out, Let's Talk!</h2>
     <form class="contact-form" action="https://formspree.io/f/mlgqkgzr" method="POST">
       <div class="input-group name-group">
         <label for="name">Name</label>
@@ -390,8 +400,6 @@ A Software Engineer, Gen AI Enthusiast, and a self-taught UI/UX designer. For th
             }
         });
     </script>
-</body>
-</html>
 </main>
 
 <footer class="wrap reveal">
@@ -413,7 +421,8 @@ A Software Engineer, Gen AI Enthusiast, and a self-taught UI/UX designer. For th
 <script src="js/orbit.js"></script>
 <script src="js/scroll-reveal.js"></script>
 <script src="js/experience-reveal.js"></script>
+<script src="js/education-reveal.js"></script>
 <script src="js/project-glitch.js"></script>
-<script src="js/sparkles.js"></script>
+<script src="https://portfolio-chatbot.portfoliobot.workers.dev/widget.js"></script>
 </body>
 </html>

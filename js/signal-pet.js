@@ -4,9 +4,9 @@
   if(!host) return;
 
   const ANIMS = {
-    idle: { path: i => `assests/ninja-pet/idle-${i}.png`, frames: 6, fps: 5,  loop: true  },
-    wave: { path: i => `assests/ninja-pet/wave-${i}.png`, frames: 4, fps: 8,  loop: true  },
-    jump: { path: i => `assests/ninja-pet/jump-${i}.png`, frames: 5, fps: 10, loop: false }
+    idle: { path: i => `assets/ninja-pet/idle-${i}.png`, frames: 6, fps: 5,  loop: true  },
+    wave: { path: i => `assets/ninja-pet/wave-${i}.png`, frames: 4, fps: 8,  loop: true  },
+    jump: { path: i => `assets/ninja-pet/jump-${i}.png`, frames: 5, fps: 10, loop: false }
   };
 
   let current = null, frame = 0, timer = null;
