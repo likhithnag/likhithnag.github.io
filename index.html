@@ -21,6 +21,7 @@
 <link rel="stylesheet" href="css/footer.css">
 <link rel="stylesheet" href="css/responsive.css">
 <link rel="stylesheet" href="css/motion-safe.css">
+<link rel="stylesheet" href="css/term-chat.css">
 </head>
 <body>
 
@@ -34,9 +35,11 @@
       <li><a href="#projects">Projects</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><i class="fa-solid fa-bars"></i></button>
-  </nav>
-</header>
+    <button class="nav-term-btn" id="navTermBtn" aria-label="Open terminal chat" title="Terminal Chat">
+      <span class="term-btn-text">>_ Start Session</span>
+    </button>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><i class="fa-solid fa-bars"></i></button>  </nav>
+    </header>
 
 <main>
   <!-- HERO -->
@@ -416,6 +419,29 @@
   <div class="fine-print">© <span id="year"></span> Likhith N Gowda. Built with care.</div>
 </footer>
 
+  <!-- Terminal Chat Modal -->
+<div class="term-modal" id="termModal" role="dialog" aria-modal="true" aria-label="Terminal Chat">
+  <div class="term-modal-backdrop" id="termBackdrop"></div>
+  <div class="term-window">
+    <div class="term-header">
+      <div class="term-dots">
+        <span class="term-dot close"></span>
+        <span class="term-dot minimize"></span>
+        <span class="term-dot maximize"></span>
+      </div>
+      <div class="term-title">terminal — ninjabot</div>
+    </div>
+    <div class="term-body" id="termBody">
+      <div class="term-output" id="termOutput"></div>
+      <div class="term-input-line">
+        <span class="term-prompt">$</span>
+        <input type="text" class="term-input" id="termInput" autocomplete="off" spellcheck="false" placeholder="Type a question...">
+        <span class="term-cursor" id="termCursor"></span>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script src="js/nav.js"></script>
 <script src="js/signal-pet.js"></script>
 <script src="js/orbit.js"></script>
@@ -423,6 +449,5 @@
 <script src="js/experience-reveal.js"></script>
 <script src="js/education-reveal.js"></script>
 <script src="js/project-glitch.js"></script>
-<script src="https://portfolio-chatbot.portfoliobot.workers.dev/widget.js"></script>
-</body>
+<script src="js/term-chat.js"></script></body>
 </html>
