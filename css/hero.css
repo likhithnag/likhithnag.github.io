@@ -77,6 +77,12 @@
   background:var(--card-2);border:1px solid var(--border);
   padding:8px 16px;border-radius:20px;
   font-size:13px;font-weight:600;color:var(--text-1);
+  transition:transform .25s, border-color .25s, box-shadow .25s;
+}
+.status-badge:hover{
+  transform:translateY(-4px);
+  border-color:var(--accent-2);
+  box-shadow:0 20px 44px var(--accent-glow);
 }
 .status-dot{
   width:8px;height:8px;border-radius:50%;
@@ -90,22 +96,18 @@
   border:1px solid var(--border);border-radius:16px;
   padding:14px 22px;display:flex;flex-direction:column;align-items:center;text-align:center;
   box-shadow:0 16px 40px rgba(0,0,0,.3);
+  transition:transform .25s, border-color .25s, box-shadow .25s;
 }
 .stat-card-1{transform:rotate(-3deg);}
 .stat-card-2{transform:rotate(2deg);}
 .stat-card-3{transform:rotate(-2deg);}
-.stat-num{font-family:var(--font-head);font-weight:700;font-size:20px;color:var(--accent-2);}
-.stat-label{font-size:11px;color:var(--text-2);margin-top:2px;white-space:nowrap;}
-
-.stat-card-link{
-  cursor:pointer;text-decoration:none;
-  transition:transform .25s, border-color .25s, box-shadow .25s;
-}
-.stat-card-link:hover{
+.stat-card:hover{
   transform:rotate(0deg) translateY(-4px) !important;
   border-color:var(--accent-2);
   box-shadow:0 20px 44px var(--accent-glow);
 }
+.stat-num{font-family:var(--font-head);font-weight:700;font-size:20px;color:var(--accent-2);}
+.stat-label{font-size:11px;color:var(--text-2);margin-top:2px;white-space:nowrap;}
 
 /* ---------- floating code snippet card ---------- */
 /* now a normal flex child inside .hero-decor — no hardcoded top/position,

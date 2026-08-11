@@ -17,11 +17,11 @@
 <link rel="stylesheet" href="css/education.css">
 <link rel="stylesheet" href="css/orbit.css">
 <link rel="stylesheet" href="css/projects.css">
-<link rel="stylesheet" href="css/contact-form.css">
-<link rel="stylesheet" href="css/footer.css">
-<link rel="stylesheet" href="css/responsive.css">
-<link rel="stylesheet" href="css/motion-safe.css">
-<link rel="stylesheet" href="css/term-chat.css">
+  <link rel="stylesheet" href="css/contact-form.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/motion-safe.css">
+  <link rel="stylesheet" href="css/term-chat.css">
 </head>
 <body>
 
@@ -38,8 +38,9 @@
     <button class="nav-term-btn" id="navTermBtn" aria-label="Open terminal chat" title="Terminal Chat">
       <span class="term-btn-text">>_ Start Session</span>
     </button>
-    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><i class="fa-solid fa-bars"></i></button>  </nav>
-    </header>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><i class="fa-solid fa-bars"></i></button>
+  </nav>
+</header>
 
 <main>
   <!-- HERO -->
@@ -71,16 +72,16 @@
       </div>
     </div>
     <div class="hero-decor">
-  <div class="status-badge">
+  <a href="https://mail.google.com/mail/?view=cm&fs=1&to=likhith.nagaraju.works@gmail.com&su=Job%20Opportunity%20-%20Likhith%20N%20Gowda&body=Hi%20Likhith%2C%0D%0A%0D%0AI%20came%20across%20your%20portfolio%20and%20think%20you%27d%20be%20a%20great%20fit%20for%20a%20role%20at%20my%20company.%20Let%27s%20connect%21" class="status-badge" style="text-decoration:none;cursor:pointer;" target="_blank" rel="noopener noreferrer">
     <span class="status-dot"></span> Currently open to opportunities
-  </div>
+  </a>
 
   <a href="#about" class="stat-card stat-card-1 stat-card-link">
     <span class="stat-num">2+</span>
     <span class="stat-label">Years Experience</span>
   </a>
 
-  <div class="stat-card stat-card-2">
+  <div class="stat-card stat-card-2" id="genaiCard" style="cursor:pointer;">
     <span class="stat-num">GenAI</span>
     <span class="stat-label">Enthusiast</span>
   </div>
@@ -90,10 +91,7 @@
     <span class="stat-label">Projects Shipped</span>
   </a>
 
-  <!-- <i class="fa-solid fa-asterisk sparkle sp1"></i>
-  <i class="fa-solid fa-asterisk sparkle sp2"></i>
-  <i class="fa-solid fa-asterisk sparkle sp3"></i>
-  <i class="fa-solid fa-asterisk sparkle sp4"></i> -->
+  
 
   <div class="code-card">
     <div class="code-card-bar">
@@ -102,7 +100,7 @@
     </div>
     <pre class="code-card-body"><code><span class="tok-kw">const</span> <span class="tok-var">engineer</span> = {
   <span class="tok-prop">name</span>: <span class="tok-str">"Likhith N Gowda"</span>,
-  <span class="tok-prop">stack</span>: [<span class="tok-str">"Java"</span>, <span class="tok-str">"SAPUI5"</span>, <span class="tok-str">"React"</span>],
+  <span class="tok-prop">stack</span>: [<span class="tok-str">"Java"</span>, <span class="tok-str">"SAP"</span>, <span class="tok-str">"React"</span>],
   <span class="tok-prop">status</span>: <span class="tok-str">"currently building"</span>,
   <span class="tok-prop">curious</span>: <span class="tok-bool">true</span>,
 };</code></pre>
@@ -192,7 +190,7 @@
     </div>
     <div class="resume-inline">
       <p>Want a deep dive? Grab a copy of my resume.</p>
-      <a class="resume-btn" href="assets/Likhith_Resume.pdf" download><i class="fa-solid fa-download"></i> Download Resume</a>
+      <a class="resume-btn" href="assets/Likhith_Resume.pdf" download id="resumeBtn"><i class="fa-solid fa-download"></i> Download Resume</a>
     </div>
   </section>
   <!-- EDUCATION -->
@@ -402,6 +400,17 @@
                 contactForm.reset();
             }
         });
+
+        // Referral prompt after resume download
+        document.getElementById('resumeBtn')?.addEventListener('click', function() {
+            setTimeout(function() {
+                if (confirm('Thanks for downloading my resume! 🙏\n\nIf you think I\'d be a great fit for your team, would you consider referring me? It would mean a lot!')) {
+                    navigator.clipboard.writeText('likhith.nagaraju.works@gmail.com').then(function() {
+                        alert('Email copied to clipboard: likhith.nagaraju.works@gmail.com');
+                    });
+                }
+            }, 500);
+        });
     </script>
 </main>
 
@@ -419,7 +428,7 @@
   <div class="fine-print">© <span id="year"></span> Likhith N Gowda. Built with care.</div>
 </footer>
 
-  <!-- Terminal Chat Modal -->
+<!-- Terminal Chat Modal -->
 <div class="term-modal" id="termModal" role="dialog" aria-modal="true" aria-label="Terminal Chat">
   <div class="term-modal-backdrop" id="termBackdrop"></div>
   <div class="term-window">
@@ -449,5 +458,6 @@
 <script src="js/experience-reveal.js"></script>
 <script src="js/education-reveal.js"></script>
 <script src="js/project-glitch.js"></script>
-<script src="js/term-chat.js"></script></body>
+<script src="js/term-chat.js"></script>
+</body>
 </html>

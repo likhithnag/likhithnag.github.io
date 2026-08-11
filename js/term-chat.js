@@ -21,7 +21,12 @@
 
   // Initialize
   function init(){
-    openBtn.addEventListener('click', openModal);
+    openBtn.addEventListener('click', () => openModal());
+    // GenAI card click → open terminal with auto-question
+    const genaiCard = document.getElementById('genaiCard');
+    if(genaiCard){
+      genaiCard.addEventListener('click', () => openModal('How is the GenAI chatbot deployed in this portfolio?'));
+    }
     // All close actions reset chat
     closeBtn?.addEventListener('click', closeAndReset);
     backdrop.addEventListener('click', closeAndReset);
@@ -38,7 +43,7 @@
     });
   }
 
-  function openModal(){
+  function openModal(autoQuestion){
     isOpen = true;
     modal.classList.add('open');
     document.body.style.overflow = 'hidden';
@@ -47,6 +52,10 @@
     appendLine('system', 'Welcome to Ninjabot Terminal v1.0');
     appendLine('system', 'Ask me about Likhith\'s experience, projects, skills, or contact info.');
     appendLine('system', 'Type your question and press Enter.\n');
+    if(autoQuestion){
+      // Small delay to let welcome messages render
+      setTimeout(() => sendMessage(autoQuestion), 300);
+    }
   }
 
   function closeAndReset(){
