@@ -72,7 +72,7 @@
       </div>
     </div>
     <div class="hero-decor">
-  <a href="https://mail.google.com/mail/?view=cm&fs=1&to=likhith.nagaraju.works@gmail.com&su=Job%20Opportunity%20-%20Likhith%20N%20Gowda&body=Hi%20Likhith%2C%0D%0A%0D%0AI%20came%20across%20your%20portfolio%20and%20think%20you%27d%20be%20a%20great%20fit%20for%20a%20role%20at%20my%20company.%20Let%27s%20connect%21" class="status-badge" style="text-decoration:none;cursor:pointer;" target="_blank" rel="noopener noreferrer">
+  <a href="mailto:likhith.nagaraju.works@gmail.com" class="status-badge" style="text-decoration:none;cursor:pointer;" target="_blank" rel="noopener noreferrer">
     <span class="status-dot"></span> Currently open to opportunities
   </a>
 
@@ -122,7 +122,7 @@
     </p>
 
     <div class="social-row">
-      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=likhith.nagaraju.works@gmail.com" class="btn" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-envelope"></i></a>
+      <a href="mailto:likhith.nagaraju.works@gmail.com" class="btn" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-envelope"></i></a>
       <a href="https://www.linkedin.com/in/likhith-n-gowda-377974175?utm_source=share_via&utm_content=profile&utm_medium=member_ios" class="btn" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i></a>
       <a href="https://www.instagram.com/blatant.soul?igsh=Nm12ZWE1OGxvN2U5&utm_source=qr" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
       <a href="https://github.com/likhithnag" class="btn" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
@@ -370,27 +370,99 @@
 </section>
     <!-- CONTACT FORM -->
   <section id="contact-form" class="section wrap reveal">
-    <h2 class="contact-cta">Got Something for me? Fill It Out, Let's Talk!</h2>
-    <form class="contact-form" action="https://formspree.io/f/mlgqkgzr" method="POST">
-      <div class="input-group name-group">
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" placeholder="Your name">
+    <h2 class="section-title">Got Something for me?</h2>
+    <p class="contact-sub">Fill it out below — this runs the same way my terminal chat does.</p>
+
+    <div class="term-split">
+
+      <div class="term-contact">
+        <div class="term-contact-bar">
+          <span class="term-dot red"></span>
+          <span class="term-dot yellow"></span>
+          <span class="term-dot green"></span>
+          <span class="term-contact-filename">contact.sh</span>
+          <span class="term-contact-status">ready</span>
+        </div>
+
+        <div class="term-contact-body">
+          <div class="term-contact-intro">
+            <span class="prompt">$</span> ./contact --new-message<br>
+            <span class="comment"># fill in the fields below, then run send</span>
+          </div>
+
+          <form class="term-form-grid" action="https://formspree.io/f/mlgqkgzr" method="POST">
+            <div class="term-form-left">
+              <div class="term-field">
+                <div class="term-field-label"><span class="key">name</span><span class="colon">:</span></div>
+                <div class="term-field-input-row">
+                  <span class="caret">&gt;</span>
+                  <input type="text" id="name" name="name" placeholder="your name" required>
+                </div>
+              </div>
+
+              <div class="term-field">
+                <div class="term-field-label"><span class="key">email</span><span class="colon">:</span></div>
+                <div class="term-field-input-row">
+                  <span class="caret">&gt;</span>
+                  <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                </div>
+              </div>
+            </div>
+
+            <div class="term-field term-field-message">
+              <div class="term-field-label"><span class="key">message</span><span class="colon">:</span></div>
+              <div class="term-field-input-row">
+                <span class="caret">&gt;</span>
+                <textarea id="message" name="message" placeholder="tell me a bit about your intent..." required></textarea>
+              </div>
+            </div>
+
+            <div class="term-submit-row">
+              <span class="term-submit-hint">or press <kbd>⌘</kbd>+<kbd>Enter</kbd></span>
+              <button type="submit" class="term-submit-btn"><span class="exec">$</span> send --now</button>
+            </div>
+          </form>
+        </div>
       </div>
 
-      <div class="input-group email-group">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" placeholder="you@example.com">
+      <div class="term-info">
+        <div class="term-contact-bar">
+          <span class="term-dot red"></span>
+          <span class="term-dot yellow"></span>
+          <span class="term-dot green"></span>
+          <span class="term-contact-filename">whoami.txt</span>
+        </div>
+        <div class="term-info-body">
+          <div class="term-info-status">Currently open to opportunities</div>
+          <div class="term-info-divider"></div>
+
+          <div class="term-info-line">
+            <div class="term-info-key">email</div>
+            <div class="term-info-val"><a href="mailto:likhith.nagaraju.works@gmail.com">likhith.nagaraju.works@gmail.com</a></div>
+          </div>
+
+          <div class="term-info-line">
+            <div class="term-info-key">response time</div>
+            <div class="term-info-val">usually within 24h</div>
+          </div>
+
+          <div class="term-info-line">
+            <div class="term-info-key">elsewhere</div>
+            <div class="term-info-links">
+              <a class="term-info-link" href="https://www.linkedin.com/in/likhith-n-gowda-377974175?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+              <a class="term-info-link" href="https://github.com/likhithnag" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i> GitHub</a>
+              <a class="term-info-link" href="https://www.instagram.com/blatant.soul?igsh=Nm12ZWE1OGxvN2U5&utm_source=qr" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i> Instagram</a>
+            </div>
+          </div>
+
+          <div class="term-info-divider"></div>
+          <div class="term-info-quote">
+            <span class="hash">#</span>Your <em>TypeError: undefined is not a function</em>  tells me more about your architecture than your README ever will.
+          </div>
+        </div>
       </div>
 
-      <div class="input-group message-group">
-        <label for="message">Message</label>
-        <textarea id="message" name="message" placeholder="Tell me a bit about your intent..."></textarea>
-      </div>
-
-      <div class="submit-group">
-        <button type="submit" class="submit-btn">Get In Touch ↗</button>
-      </div>
-    </form>
+    </div><!-- /.term-split -->
   </section>
   <script>
         // This runs every time the page is shown, even if loaded from the browser's back button cache
@@ -401,21 +473,21 @@
             }
         });
 
-        // Referral prompt after resume download
-        document.getElementById('resumeBtn')?.addEventListener('click', function() {
-            setTimeout(function() {
-                if (confirm('Thanks for downloading my resume! 🙏\n\nIf you think I\'d be a great fit for your team, would you consider referring me? It would mean a lot!')) {
-                    navigator.clipboard.writeText('likhith.nagaraju.works@gmail.com').then(function() {
-                        alert('Email copied to clipboard: likhith.nagaraju.works@gmail.com');
-                    });
-                }
-            }, 500);
-        });
+        // // Referral prompt after resume download
+        // document.getElementById('resumeBtn')?.addEventListener('click', function() {
+        //     setTimeout(function() {
+        //         if (confirm('Thanks for downloading my resume! 🙏\n\nIf you think I\'d be a great fit for your team, would you consider referring me? It would mean a lot!')) {
+        //             navigator.clipboard.writeText('likhith.nagaraju.works@gmail.com').then(function() {
+        //                 alert('Email copied to clipboard: likhith.nagaraju.works@gmail.com');
+        //             });
+        //         }
+        //     }, 500);
+        // });
     </script>
 </main>
 
 <footer class="wrap reveal">
-  <h2 class="section-title" id="contact">Contact</h2>
+  <!-- <h2 class="section-title" id="contact">Contact</h2>
   <p>I'm currently looking to join a cross-functional team that values improving people's lives
   through accessible design, or have a project in mind? Let's connect.</p>
   <a class="contact-email" href="mailto:likhith.nagaraju.works@gmail.com">likhith.nagaraju.works@gmail.com</a>
@@ -423,7 +495,7 @@
   <div class="social-row">
     <a href="https://mail.google.com/mail/?view=cm&fs=1&to=likhith.nagaraju.works@gmail.com" class="btn" target="_blank" rel="noopener noreferrer" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
     <a href="https://www.linkedin.com/in/likhith-n-gowda-377974175?utm_source=share_via&utm_content=profile&utm_medium=member_ios" class="btn" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-  </div>
+  </div> -->
 
   <div class="fine-print">© <span id="year"></span> Likhith N Gowda. Built with care.</div>
 </footer>
@@ -459,5 +531,6 @@
 <script src="js/education-reveal.js"></script>
 <script src="js/project-glitch.js"></script>
 <script src="js/term-chat.js"></script>
+<script src="js/term-contact.js"></script>
 </body>
 </html>

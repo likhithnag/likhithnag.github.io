@@ -49,4 +49,18 @@
   }, {threshold:.4});
 
   cards.forEach(c => io.observe(c));
+
+  // touch devices "stick" :hover after the first tap, so CSS :hover alone
+  // won't replay the flicker on a second tap without tapping away first.
+  // pointerdown fires fresh on every tap (and every mouse click) regardless
+  // of hover state, so drive the retrigger from here instead.
+  document.querySelectorAll('.project-card-inner').forEach(inner => {
+    const heading = inner.querySelector('h3');
+    if (!heading) return;
+    inner.addEventListener('pointerdown', () => {
+      inner.classList.remove('flicker-now');
+      void inner.offsetWidth; // force reflow so the class re-add actually restarts the animation
+      inner.classList.add('flicker-now');
+    });
+  });
 })();

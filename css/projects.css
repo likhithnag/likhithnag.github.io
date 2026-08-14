@@ -1,44 +1,71 @@
 .projects-stack{ position:relative; display:flex; flex-direction:column; gap:40px; }
 
 .project-card{
+  clip-path: inset(0 0 100% 0);
   opacity:0;
-  visibility:hidden;
-  transition:opacity .18s linear, visibility 0s linear .18s;
+  height: 400px; /* height for IntersectionObserver detection */
 }
 .project-card.revealed{
   opacity:1;
-  visibility:visible;
-  transition:opacity .18s linear;
+  animation: scanwipe-in .9s cubic-bezier(.22,.9,.32,1) forwards;
 }
 
-.project-card.glitching h3{ animation: glitchtext-in .4s steps(2,end) forwards; }
-.project-card.glitching{ animation: glitchcard-in .6s steps(2,end) forwards; }
-.project-card.glitching-out h3{ animation: glitchtext-out .3s steps(2,end) forwards; }
-.project-card.glitching-out{ animation: glitchcard-out .35s steps(2,end) forwards; }
+/* Staggered reveal delays */
+.project-card:nth-child(1).revealed{ animation-delay: 0ms; }
+.project-card:nth-child(2).revealed{ animation-delay: 100ms; }
+.project-card:nth-child(3).revealed{ animation-delay: 200ms; }
+.project-card:nth-child(4).revealed{ animation-delay: 300ms; }
+.project-card:nth-child(5).revealed{ animation-delay: 400ms; }
+.project-card:nth-child(6).revealed{ animation-delay: 500ms; }
 
-@keyframes glitchtext-in{
-  0%,100%{ text-shadow:none; transform:translate(0,0); }
-  20%{ text-shadow:-3px 0 var(--pink,#ff6bcb), 3px 0 var(--cyan,#5eead4); transform:translate(-2px,0);}
-  40%{ text-shadow:3px 0 var(--pink,#ff6bcb), -3px 0 var(--cyan,#5eead4); transform:translate(2px,0);}
-  60%{ text-shadow:-2px 0 var(--cyan,#5eead4), 2px 0 var(--pink,#ff6bcb); transform:translate(-1px,0);}
-  80%{ text-shadow:2px 0 var(--cyan,#5eead4), -2px 0 var(--pink,#ff6bcb); transform:translate(1px,0);}
+@keyframes scanwipe-in{
+  0%{ clip-path: inset(0 0 100% 0); opacity:0; }
+  100%{ clip-path: inset(0 0 0% 0); opacity:1; }
 }
-@keyframes glitchcard-in{
-  0%{ clip-path: inset(10% 0 60% 0); }
-  20%{ clip-path: inset(60% 0 5% 0); }
-  50%{ clip-path: inset(30% 0 40% 0); }
-  80%{ clip-path: inset(15% 0 50% 0); }
-  100%{ clip-path:none; }
+@keyframes scanwipe-out{
+  0%{ clip-path: inset(0 0 0% 0); opacity:1; }
+  100%{ clip-path: inset(0 0 100% 0); opacity:0; }
 }
-@keyframes glitchtext-out{
-  0%{ text-shadow:none; }
-  50%{ text-shadow:-1px 0 var(--cyan,#5eead4), 1px 0 var(--pink,#ff6bcb); }
-  100%{ text-shadow:none; }
+
+/* Heading flicker at end of wipe */
+.project-card.revealed h3{
+  animation: text-flicker .5s ease-out .55s;
 }
-@keyframes glitchcard-out{
-  0%{ clip-path:none; }
-  50%{ clip-path: inset(38% 0 42% 0); }
-  100%{ clip-path: inset(50% 0 50% 0); }
+@keyframes text-flicker{
+  0%,100%{ text-shadow:none; filter:brightness(1); }
+  15%{ text-shadow:-4px 0 var(--pink,#ff6bcb), 4px 0 var(--cyan,#5eead4); filter:brightness(1.3); }
+  30%{ text-shadow:none; filter:brightness(1); }
+  45%{ text-shadow:4px 0 var(--pink,#ff6bcb), -4px 0 var(--cyan,#5eead4); filter:brightness(1.3); }
+  60%{ text-shadow:none; filter:brightness(1); }
+}
+
+/* Hover flicker on project card inner */
+.project-card .project-card-inner:hover h3{ animation: text-flicker-hover .5s ease-out; }
+.project-card .project-card-inner.flicker-now h3{ animation: text-flicker-tap .5s ease-out; }
+
+@keyframes text-flicker-hover{
+  0%,100%{ text-shadow:none; filter:brightness(1); }
+  15%{ text-shadow:-4px 0 var(--pink,#ff6bcb), 4px 0 var(--cyan,#5eead4); filter:brightness(1.3); }
+  30%{ text-shadow:none; filter:brightness(1); }
+  45%{ text-shadow:4px 0 var(--pink,#ff6bcb), -4px 0 var(--cyan,#5eead4); filter:brightness(1.3); }
+  60%{ text-shadow:none; filter:brightness(1); }
+}
+@keyframes text-flicker-tap{
+  0%,100%{ text-shadow:none; filter:brightness(1); }
+  15%{ text-shadow:-4px 0 var(--pink,#ff6bcb), 4px 0 var(--cyan,#5eead4); filter:brightness(1.3); }
+  30%{ text-shadow:none; filter:brightness(1); }
+  45%{ text-shadow:4px 0 var(--pink,#ff6bcb), -4px 0 var(--cyan,#5eead4); filter:brightness(1.3); }
+  60%{ text-shadow:none; filter:brightness(1); }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce){
+  .project-card{
+    opacity:1;
+    clip-path: inset(0 0 0% 0);
+    animation: none !important;
+  }
+  .project-card.revealed h3{ animation: none !important; }
 }
 
 .project-card-inner{
