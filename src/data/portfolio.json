@@ -1,0 +1,183 @@
+{
+  "profile": {
+    "name": "Likhith N Gowda",
+    "shortName": "Likhith",
+    "tagline": "Software Engineer | Java Specialist | Gen AI Enthusiast",
+    "role": "Software Engineer",
+    "specialization": "Java • SAP BTP • Gen AI • Full-Stack",
+    "location": "Bangalore, Karnataka, India",
+    "yearsOfExperience": 2,
+    "bio": "Results-driven Software Engineer and M.Tech graduate from BITS Pilani with 2+ years of hands-on experience building enterprise-grade software at SAP Labs India. Core expertise in full-stack Java development, cloud-native architectures (SAP BTP), and agile methodologies. Proven track record of delivering scalable, high-performance systems and transforming complex business challenges into elegant software solutions.\n\nKey Achievements:\n• Legacy Modernization: Led end-to-end Java 8 → 17 migration, refactoring core architecture and testing infrastructure (PowerMockito → Mockito), achieving zero-regression deployment\n• Platform Engineering: Built automated state-sync mechanisms for SAP Fiori Elements, eliminating UX bottlenecks\n• Performance Optimization: Improved database query performance by 30% (MySQL/PostgreSQL) and read performance by 40% via Redis caching\n• Developer Experience: Founded \"Synergy Bytes\" cross-team workshops, reducing duplicated effort; cut onboarding time via internal tooling\n• Observability & Security: Designed Dynatrace dashboards with automated threat detection alerts\n• AI/ML Integration: Master's dissertation on computer vision waste segregation using fastai/Python",
+    "avatarSvg": "/avatar.png",
+    "social": {
+      "github": "https://github.com/likhithnag",
+      "linkedin": "https://www.linkedin.com/in/likhith-n-gowda-377974175",
+      "email": "mailto:likhith.nagaraju.works@gmail.com",
+      "phone": "+91-7676794366",
+      "website": "https://likhithnag.github.io",
+      "resume": "/resume.pdf"
+    }
+  },
+  "skills": {
+    "categories": [
+      {
+        "name": "Core Languages",
+        "items": ["Java (8/11/17/21)", "JavaScript (ES6+)", "TypeScript", "Python", "SQL", "C++", "Shell Scripting"]
+      },
+      {
+        "name": "Frameworks & Platforms",
+        "items": ["Spring Boot", "Spring MVC", "Hibernate", "SAP BTP (Cloud Foundry)", "SAP UI5", "SAP Fiori Elements", "React", "Node.js", "Express"]
+      },
+      {
+        "name": "Testing & Quality",
+        "items": ["JUnit", "Mockito", "PowerMockito (legacy)", "Selenium", "ESLint", "Prettier", "SonarQube"]
+      },
+      {
+        "name": "Databases",
+        "items": ["MySQL", "PostgreSQL", "Oracle DB", "MongoDB", "Redis"]
+      },
+      {
+        "name": "Cloud & DevOps",
+        "items": ["SAP BTP", "Docker", "Kubernetes (basics)", "CI/CD Pipelines", "Git", "GitHub Actions", "Maven", "Gradle"]
+      },
+      {
+        "name": "Observability",
+        "items": ["Dynatrace", "Logging", "Metrics", "Alerting"]
+      },
+      {
+        "name": "API & Integration",
+        "items": ["REST", "OData", "GraphQL (basics)", "WebSocket", "Microservices"]
+      },
+      {
+        "name": "AI/ML & Data",
+        "items": ["Python (pandas, numpy)", "fastai", "PyTorch", "Computer Vision", "Transfer Learning", "ML Ops"]
+      },
+      {
+        "name": "Architecture & Design",
+        "items": ["Microservices", "OOP/SOLID", "System Design", "Distributed Systems", "Domain-Driven Design", "Design Patterns"]
+      },
+      {
+        "name": "Tools & Methodologies",
+        "items": ["IntelliJ IDEA", "Eclipse", "Postman", "JIRA", "Confluence", "Agile/Scrum", "SDLC", "Code Review"]
+      }
+    ]
+  },
+  "experience": [
+    {
+      "company": "SAP Labs India",
+      "role": "Scholar / Software Engineer (Java Developer)",
+      "period": "August 2022 – June 2024",
+      "location": "Bangalore, Karnataka",
+      "summary": "Designed and developed scalable enterprise Java applications on SAP Business Technology Platform, contributing to core product modules used by thousands of enterprise clients globally. Built and maintained RESTful microservices using Spring Boot, improving system modularity and enabling independent deployment of services, reducing release cycle time by ~20%.",
+      "highlights": [
+        "Orchestrated comprehensive migration of legacy Java 8 codebase to Java 17, refactoring core architecture to align with modern Java standards (modules, records, pattern matching, sealed classes) and migrated PowerMockito → standard Mockito achieving zero-regression deployment",
+        "Implemented optimization strategies in MySQL and PostgreSQL, writing complex SQL queries and stored procedures, improving query performance by up to 30%",
+        "Architected automated state-sync mechanism for SAP Fiori Elements custom tile generation that dynamically intercepts unsaved UI filter states and triggers data retrieval—ensuring flawless app-state preservation without manual intervention",
+        "Engineered zero-touch beta validation pipeline using Selenium WebDriver to monitor and validate Beta feature availability in live tenant environments, replacing manual QA checks and reclaiming 20+ hours/week of developer bandwidth",
+        "Spearheaded development of comprehensive system health dashboard using Dynatrace to proactively monitor request-response latencies, error rates, and critical architectural metrics with automated threshold alerts for abnormal API behaviors",
+        "Founded and organized \"Synergy Bytes\" workshop series bridging teams across SAP UX Engineering LOB, cutting duplicated effort across parallel initiatives",
+        "Contributed to internal developer tooling and documentation, reducing onboarding time for new engineers by streamlining technical knowledge transfer",
+        "Wrote comprehensive unit and integration tests using JUnit and Mockito, maintaining code coverage above 85% and significantly reducing production defect rates"
+      ]
+    },
+    {
+      "company": "Inventron",
+      "role": "Software Engineer Intern",
+      "period": "March 2022 – May 2022",
+      "location": "Bangalore, Karnataka",
+      "summary": "Developed and tested software modules for embedded and IoT-based systems, gaining cross-disciplinary exposure in both software engineering and hardware interfacing.",
+      "highlights": [
+        "Collaborated with a small engineering team to debug and resolve integration issues between software and hardware components, improving system reliability",
+        "Wrote clean, documented code and contributed to code review sessions, applying software engineering best practices in a fast-paced startup environment"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "id": "proj-1",
+      "title": "Scalable Microservices Architecture",
+      "subtitle": "Java • Spring Boot • Docker • REST API",
+      "description": "Architected a microservices-based application with services for authentication, data processing, and reporting. Containerized with Docker and integrated CI/CD for automated zero-downtime deployments. Applied domain-driven design principles for service boundaries.",
+      "stack": ["Java", "Spring Boot", "Docker", "REST API", "MySQL", "CI/CD"],
+      "role": "Architect & Developer",
+      "year": 2023,
+      "link": "",
+      "image": "",
+      "highlight": true
+    },
+    {
+      "id": "proj-2",
+      "title": "Distributed Database Optimization Engine",
+      "subtitle": "Java • PostgreSQL • Redis • Spring • Hibernate",
+      "description": "Built a query optimization module using Redis caching and indexing strategies, improving read performance by 40%. Resolved N+1 query issues using Hibernate ORM fetch optimizations. Implemented connection pooling and query plan analysis.",
+      "stack": ["Java", "PostgreSQL", "Redis", "Spring", "Hibernate ORM"],
+      "role": "Backend Engineer",
+      "year": 2023,
+      "link": "",
+      "image": "",
+      "highlight": true
+    },
+    {
+      "id": "proj-3",
+      "title": "AI-Driven Waste Segregation System",
+      "subtitle": "Python • fastai • PyTorch • Computer Vision",
+      "description": "Master's dissertation: Engineered end-to-end ML pipeline for environmental sustainability — automated waste classification via image processing. Leveraged transfer learning with fastai; full lifecycle: dataset engineering → training/validation → inference → documentation.",
+      "stack": ["Python", "fastai", "PyTorch", "Computer Vision", "Transfer Learning"],
+      "role": "ML Engineer (Research)",
+      "year": 2024,
+      "link": "",
+      "image": "",
+      "highlight": true
+    },
+    {
+      "id": "proj-4",
+      "title": "Real-Time Chat Application",
+      "subtitle": "React • Node.js • WebSocket • Socket.io",
+      "description": "Built bi-directional chat interface with modular, decoupled React components. Implemented session joining, real-time message rendering, live participant tracking, room/workspace telemetry.",
+      "stack": ["React", "Node.js", "WebSocket", "Socket.io"],
+      "role": "Full-Stack Developer",
+      "year": 2023,
+      "link": "",
+      "image": "",
+      "highlight": false
+    },
+    {
+      "id": "proj-5",
+      "title": "Object-Oriented E-Commerce System",
+      "subtitle": "Java • Spring Framework • OOP • System Design",
+      "description": "Designed modular e-commerce engine with distinct admin/customer workflows. Implemented inventory management, dynamic cart mechanics, checkout processing. Strict adherence to SOLID principles: high cohesion, low coupling across modules.",
+      "stack": ["Java", "Spring Framework", "OOP", "System Design"],
+      "role": "Backend Developer",
+      "year": 2022,
+      "link": "",
+      "image": "",
+      "highlight": false
+    },
+    {
+      "id": "proj-6",
+      "title": "Dynamic Task Management Interface",
+      "subtitle": "HTML • CSS • JavaScript (ES6+) • DOM",
+      "description": "Lightweight task tracking app built without frameworks — demonstrates fundamental mastery. Event-driven architecture, direct state manipulation, semantic UI framework.",
+      "stack": ["HTML", "CSS", "JavaScript (ES6+)", "DOM Manipulation"],
+      "role": "Frontend Developer",
+      "year": 2022,
+      "link": "",
+      "image": "",
+      "highlight": false
+    }
+  ],
+  "education": [
+    {
+      "degree": "Master of Technology (M.Tech) — Computer Software Engineering",
+      "institution": "Birla Institute of Technology and Science (BITS), Pilani",
+      "year": "2022 – 2024",
+      "details": "Relevant Coursework: Advanced Algorithms, Distributed Systems, Software Architecture, Cloud Computing, Database Management Systems, Machine Learning. Dissertation: \"AI-Driven Waste Segregation System\" — End-to-end computer vision pipeline using Python/fastai/PyTorch for automated waste classification via image processing. Secured admission to one of India's top-ranked engineering institutions for post-graduate CS education while working full-time at SAP."
+    },
+    {
+      "degree": "Bachelor of Engineering (B.E.) — Electrical, Electronics & Communications Engineering",
+      "institution": "Alva's Institute of Engineering and Technology, Mangaluru",
+      "year": "2018 – 2022",
+      "details": "Focus: Digital electronics, computational logic, signal processing, embedded systems. Foundation in analytical problem-solving bridging hardware and software."
+    }
+  ]
+}
