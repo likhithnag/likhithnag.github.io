@@ -8,7 +8,7 @@
     "location": "Bangalore, Karnataka, India",
     "yearsOfExperience": 2,
     "bio": "Results-driven Software Engineer and M.Tech graduate from BITS Pilani with 2+ years of hands-on experience building enterprise-grade software at SAP Labs India. Core expertise in full-stack Java development, cloud-native architectures (SAP BTP), and agile methodologies. Proven track record of delivering scalable, high-performance systems and transforming complex business challenges into elegant software solutions.\n\nKey Achievements:\n• Legacy Modernization: Led end-to-end Java 8 → 17 migration, refactoring core architecture and testing infrastructure (PowerMockito → Mockito), achieving zero-regression deployment\n• Platform Engineering: Built automated state-sync mechanisms for SAP Fiori Elements, eliminating UX bottlenecks\n• Performance Optimization: Improved database query performance by 30% (MySQL/PostgreSQL) and read performance by 40% via Redis caching\n• Developer Experience: Founded \"Synergy Bytes\" cross-team workshops, reducing duplicated effort; cut onboarding time via internal tooling\n• Observability & Security: Designed Dynatrace dashboards with automated threat detection alerts\n• AI/ML Integration: Master's dissertation on computer vision waste segregation using fastai/Python",
-    "avatarSvg": "/avatar.png",
+    "avatarSvg": "/avatar-new.png",
     "social": {
       "github": "https://github.com/likhithnag",
       "linkedin": "https://www.linkedin.com/in/likhith-n-gowda-377974175",
@@ -26,7 +26,11 @@
       },
       {
         "name": "Frameworks & Platforms",
-        "items": ["Spring Boot", "Spring MVC", "Hibernate", "SAP BTP (Cloud Foundry)", "SAP UI5", "SAP Fiori Elements", "React", "Node.js", "Express"]
+        "items": ["Spring Boot", "Spring MVC", "Hibernate", "SAP BTP (Cloud Foundry)", "SAP UI5", "SAP Fiori Elements", "React", "Node.js", "Express", "REST", "OData", "GraphQL (basics)", "WebSocket", "Microservices"]
+      },
+      {
+        "name": "AI/ML & Data",
+        "items": ["Python (pandas, numpy)", "fastai", "PyTorch", "Computer Vision", "Transfer Learning", "ML Ops", "Agentic Workflows", "Agentic Vector DB", "Agentic RAG", "Multi-Agent Models"]
       },
       {
         "name": "Testing & Quality",
@@ -38,27 +42,7 @@
       },
       {
         "name": "Cloud & DevOps",
-        "items": ["SAP BTP", "Docker", "Kubernetes (basics)", "CI/CD Pipelines", "Git", "GitHub Actions", "Maven", "Gradle"]
-      },
-      {
-        "name": "Observability",
-        "items": ["Dynatrace", "Logging", "Metrics", "Alerting"]
-      },
-      {
-        "name": "API & Integration",
-        "items": ["REST", "OData", "GraphQL (basics)", "WebSocket", "Microservices"]
-      },
-      {
-        "name": "AI/ML & Data",
-        "items": ["Python (pandas, numpy)", "fastai", "PyTorch", "Computer Vision", "Transfer Learning", "ML Ops"]
-      },
-      {
-        "name": "Architecture & Design",
-        "items": ["Microservices", "OOP/SOLID", "System Design", "Distributed Systems", "Domain-Driven Design", "Design Patterns"]
-      },
-      {
-        "name": "Tools & Methodologies",
-        "items": ["IntelliJ IDEA", "Eclipse", "Postman", "JIRA", "Confluence", "Agile/Scrum", "SDLC", "Code Review"]
+        "items": ["SAP BTP", "Docker", "Kubernetes (basics)", "CI/CD Pipelines", "Git", "GitHub Actions", "Maven", "Gradle", "Dynatrace", "Logging", "Metrics", "Alerting"]
       }
     ]
   },

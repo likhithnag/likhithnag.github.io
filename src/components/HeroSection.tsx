@@ -75,11 +75,13 @@ export function HeroSection() {
             transition={{ delay: 0.45, duration: 0.6 }}
             className="mb-6"
           >
-            <img
-              src={profile.avatarSvg}
-              alt={`${profile.name} avatar`}
-              className="w-28 h-28 md:w-36 md:h-36 lg:w-40 lg:h-40 rounded-full object-cover border-2 border-chrome-dark/30 mx-auto shadow-xl shadow-purple-500/10"
-            />
+            <div className="relative w-28 h-28 md:w-36 md:h-36 lg:w-40 lg:h-40 rounded-full overflow-hidden border-2 border-chrome-dark/30 mx-auto shadow-xl shadow-purple-500/10">
+              <img
+                src={profile.avatarSvg}
+                alt={`${profile.name} avatar`}
+                className="w-full h-full object-cover scale-120 translate-y-2"
+              />
+            </div>
           </motion.div>
 
           <motion.div
@@ -101,7 +103,7 @@ export function HeroSection() {
               onClick={scrollToExperience}
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.98 }}
-              className="group inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 text-white font-medium text-base hover:from-purple-500 hover:via-pink-500 hover:to-orange-400 transition-all duration-300 shadow-lg shadow-purple-500/25"
+              className="group inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-transparent border-2 border-chrome-dark/50 text-chrome-light/80 hover:border-purple-500 hover:text-white hover:bg-purple-500/10 transition-all duration-300 font-medium text-base"
               aria-label="Scroll to experience section"
             >
               <span>Explore My Work</span>

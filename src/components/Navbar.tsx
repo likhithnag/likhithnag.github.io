@@ -1,8 +1,11 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X } from 'lucide-react';
-import { SocialLinksComponent } from './SocialLinks';
+import { Menu, X, Bot } from 'lucide-react';
 import { usePortfolio } from '../hooks/usePortfolio';
+
+interface NavbarProps {
+  onChatOpen: () => void;
+}
 
 const navItems = [
   { href: '#hero', label: 'HOME' },
@@ -12,7 +15,7 @@ const navItems = [
   { href: '#contact', label: 'CONTACT' },
 ] as const;
 
-export function Navbar() {
+export function Navbar({ onChatOpen }: NavbarProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { profile } = usePortfolio();
@@ -75,9 +78,15 @@ export function Navbar() {
             ))}
           </div>
 
-          <div className="hidden md:flex items-center gap-4">
-            <SocialLinksComponent links={profile.social} size="sm" />
-          </div>
+          <motion.button
+            onClick={onChatOpen}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="hidden md:flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-br from-purple-600 via-pink-600 to-orange-500 text-white hover:from-purple-500 hover:via-pink-500 hover:to-orange-400 transition-all duration-300 shadow-lg shadow-purple-500/25"
+            aria-label="Open chat assistant"
+          >
+            <Bot className="w-5 h-5" aria-hidden="true" />
+          </motion.button>
 
           <button
             className="md:hidden p-2 rounded-lg text-chrome-light hover:text-white hover:bg-card transition-colors"
@@ -111,9 +120,13 @@ export function Navbar() {
                     {item.label}
                   </motion.a>
                 ))}
-                {/* <div className="pt-4 border-t border-border">
-                  <SocialLinksComponent links={profile.social} size="md" />
-                </div> */}
+                <button
+                  onClick={() => { setIsMobileMenuOpen(false); onChatOpen(); }}
+                  className="w-full mt-4 px-6 py-3 rounded-xl bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 text-white font-medium hover:from-purple-500 hover:via-pink-500 hover:to-orange-400 transition-all duration-300 flex items-center justify-center gap-2"
+                >
+                  <Bot className="w-5 h-5" />
+                  <span>Open Assistant</span>
+                </button>
               </div>
             </motion.div>
           )}

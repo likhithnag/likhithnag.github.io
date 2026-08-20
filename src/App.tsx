@@ -2,26 +2,27 @@ import { Navbar } from './components/Navbar';
 import { HeroSection } from './components/HeroSection';
 import { AboutSection } from './components/AboutSection';
 import { ExperienceSection } from './components/ExperienceSection';
-import { ServicesSection } from './components/ServicesSection';
 import { SkillsSection } from './components/SkillsSection';
 import { ProjectsSection } from './components/ProjectsSection';
-import { TestimonialsSection } from './components/TestimonialsSection';
 import { Footer } from './components/Footer';
+import { ChatbotModal } from './components/ChatbotModal';
+import { useState } from 'react';
 
 function App() {
+  const [isChatOpen, setIsChatOpen] = useState(false);
+
   return (
     <>
-      <Navbar />
+      <Navbar onChatOpen={() => setIsChatOpen(true)} />
       <main id="main-content" className="min-h-screen">
         <HeroSection />
         <AboutSection />
         <ExperienceSection />
-        <ServicesSection />
         <SkillsSection />
         <ProjectsSection />
-        <TestimonialsSection />
         <Footer />
       </main>
+      <ChatbotModal isOpen={isChatOpen} onClose={() => setIsChatOpen(false)} />
     </>
   );
 }
