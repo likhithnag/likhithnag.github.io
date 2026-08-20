@@ -10,6 +10,7 @@ interface NavbarProps {
 const navItems = [
   { href: '#hero', label: 'HOME' },
   { href: '#about', label: 'ABOUT' },
+  { href: '#experience', label: 'EXPERIENCE' },
   { href: '#skills', label: 'SKILLS' },
   { href: '#projects', label: 'PROJECTS' },
   { href: '#contact', label: 'CONTACT' },

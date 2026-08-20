@@ -15,7 +15,7 @@
       "email": "mailto:likhith.nagaraju.works@gmail.com",
       "phone": "+91-7676794366",
       "website": "https://likhithnag.github.io",
-      "resume": "/resume.pdf"
+      "resume": "/Likhith_N_Gowda_resume.pdf"
     }
   },
   "skills": {
@@ -109,7 +109,7 @@
       "stack": ["Python", "fastai", "PyTorch", "Computer Vision", "Transfer Learning"],
       "role": "ML Engineer (Research)",
       "year": 2024,
-      "link": "",
+      "link": "https://github.com/likhithnag/Waste-Segregation",
       "image": "",
       "highlight": true
     },
@@ -121,7 +121,7 @@
       "stack": ["React", "Node.js", "WebSocket", "Socket.io"],
       "role": "Full-Stack Developer",
       "year": 2023,
-      "link": "",
+      "link": "https://github.com/likhithnag/chat-app",
       "image": "",
       "highlight": false
     },
@@ -133,7 +133,7 @@
       "stack": ["Java", "Spring Framework", "OOP", "System Design"],
       "role": "Backend Developer",
       "year": 2022,
-      "link": "",
+      "link": "https://github.com/likhithnag/online-shopping",
       "image": "",
       "highlight": false
     },
@@ -145,7 +145,7 @@
       "stack": ["HTML", "CSS", "JavaScript (ES6+)", "DOM Manipulation"],
       "role": "Frontend Developer",
       "year": 2022,
-      "link": "",
+      "link": "https://github.com/likhithnag/to-do-list",
       "image": "",
       "highlight": false
     }

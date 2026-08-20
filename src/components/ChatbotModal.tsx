@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Send } from 'lucide-react';
 
@@ -9,7 +9,7 @@ interface Message {
   content: string;
 }
 
-function TypewriterText({ text, onType }: { text: string; onType?: () => void }) {
+function TypewriterText({ text }: { text: string }) {
   const [displayText, setDisplayText] = useState('');
   const [index, setIndex] = useState(0);
   const reduceMotion = typeof window !== 'undefined' && window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
@@ -35,22 +35,9 @@ function TypewriterText({ text, onType }: { text: string; onType?: () => void })
 
   useEffect(() => {
     setDisplayText(text.slice(0, index));
-    onType?.();
-  }, [index, text, onType]);
+  }, [index, text]);
 
-  // Handle newlines by splitting and rendering with <br>
-  const parts = displayText.split('\n');
-  return (
-    <span style={{ whiteSpace: 'pre-wrap' }}>
-      {parts.map((part, i) => (
-        <React.Fragment key={i}>
-          {part}
-          {i < parts.length - 1 && <br />}
-        </React.Fragment>
-      ))}
-      <span className="typewriter-cursor" />
-    </span>
-  );
+  return <span>{displayText}<span className="typewriter-cursor" /></span>;
 }
 
 export function ChatbotModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
@@ -58,7 +45,7 @@ export function ChatbotModal({ isOpen, onClose }: { isOpen: boolean; onClose: ()
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [showSuggestions, setShowSuggestions] = useState(true);
-  const messagesContainerRef = useRef<HTMLDivElement>(null);
+  const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLTextAreaElement>(null);
 
   const suggestions = [
@@ -69,7 +56,7 @@ export function ChatbotModal({ isOpen, onClose }: { isOpen: boolean; onClose: ()
   ];
 
   // Handle ESC key & prevent body scroll
-useEffect(() => {
+  useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape' && isOpen) {
         onClose();
@@ -77,37 +64,13 @@ useEffect(() => {
     };
     if (isOpen) {
       document.addEventListener('keydown', handleKeyDown);
-      // Simple scroll lock - only overflow hidden, no position fixed
-      const style = document.createElement('style');
-      style.id = 'chatbot-scroll-lock';
-      style.textContent = `
-        html, body {
-          overflow: hidden !important;
-          height: 100% !important;
-          width: 100% !important;
-        }
-      `;
-      document.head.appendChild(style);
-      // Backup inline styles
       document.body.style.overflow = 'hidden';
-      document.documentElement.style.overflow = 'hidden';
     }
     return () => {
       document.removeEventListener('keydown', handleKeyDown);
-      const style = document.getElementById('chatbot-scroll-lock');
-      if (style) style.remove();
-      document.body.style.overflow = '';
-      document.documentElement.style.overflow = '';
+      document.body.style.overflow = 'unset';
     };
   }, [isOpen, onClose]);
-
-  // Clear chat history when modal closes
-  useEffect(() => {
-    if (!isOpen) {
-      setMessages([]);
-      setShowSuggestions(true);
-    }
-  }, [isOpen]);
 
   // Focus input on open
   useEffect(() => {
@@ -118,56 +81,12 @@ useEffect(() => {
   }, [isOpen, messages.length]);
 
   const scrollToBottom = useCallback(() => {
-    const container = messagesContainerRef.current;
-    if (container) {
-      container.scrollTop = container.scrollHeight;
-    }
+    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, []);
 
-  // Auto-scroll when new messages arrive
   useEffect(() => {
     scrollToBottom();
   }, [messages, isLoading, scrollToBottom]);
-
-  // Stop wheel events from propagating to body (prevents background scroll lock from blocking modal scroll)
-  const handleWheel = useCallback((e: React.WheelEvent) => {
-    e.stopPropagation();
-  }, []);
-
-  // Add custom scrollbar styles
-  useEffect(() => {
-    if (isOpen) {
-      const style = document.createElement('style');
-      style.id = 'chatbot-scrollbar-style';
-      style.textContent = `
-        .chat-messages::-webkit-scrollbar {
-          width: 6px;
-        }
-        .chat-messages::-webkit-scrollbar-track {
-          background: transparent;
-        }
-        .chat-messages::-webkit-scrollbar-thumb {
-          background: linear-gradient(180deg, #9b6bff, #ec4899);
-          border-radius: 3px;
-          border: 2px solid transparent;
-          background-clip: content-box;
-        }
-        .chat-messages::-webkit-scrollbar-thumb:hover {
-          background: linear-gradient(180deg, #a855f7, #f472b6);
-          background-clip: content-box;
-        }
-        .chat-messages {
-          scrollbar-width: thin;
-          scrollbar-color: #9b6bff transparent;
-        }
-      `;
-      document.head.appendChild(style);
-      return () => {
-        const style = document.getElementById('chatbot-scrollbar-style');
-        if (style) style.remove();
-      };
-    }
-  }, [isOpen]);
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter' && !e.shiftKey) {
@@ -220,23 +139,31 @@ useEffect(() => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-60 bg-black/70 backdrop-blur-sm flex items-center justify-center p-4"
+            className="fixed inset-0 z-60 bg-black/70 backdrop-blur-sm"
             onClick={onClose}
             aria-hidden="true"
+          />
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.95, y: 20 }}
+            transition={{ type: 'spring', damping: 25, stiffness: 300 }}
+            className="fixed inset-0 z-60 flex items-center justify-center p-4"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Ninjabot chat"
+            onClick={(e) => e.stopPropagation()}
           >
             <motion.div
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
               transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-              className="w-full max-w-3xl h-[65vh] max-h-[65vh] bg-background border border-border rounded-2xl shadow-2xl flex flex-col overflow-hidden font-kanit"
-              role="dialog"
-              aria-modal="true"
-              aria-label="Ninjabot chat"
-              onClick={(e) => e.stopPropagation()}
+              className="w-full max-w-3xl h-[65vh] max-h-[65vh] md:h-[75vh] md:max-h-[75vh] bg-background border border-border rounded-2xl shadow-2xl flex flex-col overflow-hidden font-kanit"
+              role="document"
             >
-{/* Header */}
-              <div className="flex-shrink-0 flex items-center justify-between px-6 py-4 border-b border-border bg-background/95 backdrop-blur-sm">
+              {/* Header */}
+              <div className="flex items-center justify-between px-4 md:px-6 py-3 md:py-4 border-b border-border bg-background/95 backdrop-blur-sm">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-600 via-pink-600 to-orange-500 flex items-center justify-center">
                     <svg className="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
@@ -261,11 +188,7 @@ useEffect(() => {
               </div>
 
               {/* Messages */}
-              <div
-                ref={messagesContainerRef}
-                className="flex-1 min-h-0 overflow-y-auto p-6 space-y-4 chat-messages"
-                onWheel={handleWheel}
-              >
+              <div className="flex-1 min-h-0 overflow-y-auto overscroll-contain p-4 md:p-6 space-y-4" ref={messagesEndRef}>
                 <AnimatePresence mode="popLayout">
                   {showSuggestions && messages.length === 0 && (
                     <motion.div
@@ -310,7 +233,7 @@ useEffect(() => {
                         }`}
                       >
                         {msg.role === 'assistant' ? (
-                          <TypewriterText text={msg.content} onType={scrollToBottom} />
+                          <TypewriterText text={msg.content} />
                         ) : (
                           <p className="text-sm leading-relaxed no-wrap-words">{msg.content}</p>
                         )}
@@ -338,7 +261,7 @@ useEffect(() => {
               </div>
 
               {/* Input */}
-              <div className="flex-shrink-0 border-t border-border p-4 bg-background/95 backdrop-blur-sm">
+              <div className="border-t border-border p-3 md:p-4 bg-background/95 backdrop-blur-sm">
                 <form onSubmit={(e) => { e.preventDefault(); handleSend(input.trim()); }} className="flex gap-3">
                   <textarea
                     ref={inputRef}

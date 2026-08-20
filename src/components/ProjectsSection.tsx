@@ -10,7 +10,7 @@ export function ProjectsSection() {
     title: project.title,
     category: project.subtitle.toUpperCase(),
     description: project.description,
-    githubUrl: project.link || '#',
+    githubUrl: project.link && project.link.trim() ? project.link : undefined,
     tech: project.stack,
     metrics: [
       { label: 'ROLE', value: project.role },
@@ -22,7 +22,7 @@ export function ProjectsSection() {
   return (
     <section
       id="projects"
-      className="relative w-full bg-background text-white font-kanit pt-20 pb-84 px-6 md:px-12 lg:px-16"
+      className="relative w-full bg-background text-white font-kanit pt-20 pb-96 md:pb-84 px-6 md:px-12 lg:px-16"
     >
       <div className="max-w-7xl mx-auto w-full relative z-10">
         
@@ -59,15 +59,16 @@ export function ProjectsSection() {
         </motion.div>
 
         {/* Stacking Deck */}
-        <ScrollStack
-          itemDistance={24}
-          itemScale={0.035}
-          itemStackDistance={32}
-          stackPosition="15%"
-          scaleEndPosition="6%"
-          baseScale={0.88}
-          useWindowScroll={true}
-        >
+        <div className="mb-32 md:mb-16">
+          <ScrollStack
+            itemDistance={24}
+            itemScale={0.035}
+            itemStackDistance={32}
+            stackPosition="15%"
+            scaleEndPosition="6%"
+            baseScale={0.88}
+            useWindowScroll={true}
+          >
           {scrollStackProjects.map((project) => (
             <ScrollStackItem key={project.title}>
               <div className="relative w-full rounded-2xl border border-border bg-card p-6 md:p-8 shadow-[0_20px_50px_rgba(0,0,0,0.5)] group overflow-hidden transition-colors duration-500 hover:border-purple-500/50">
@@ -146,15 +147,17 @@ export function ProjectsSection() {
                       ))}
                     </div>
 
-                    <a
-                      href={project.githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center space-x-3 px-6 py-3 border border-purple-500/50 bg-background hover:bg-purple-500/10 hover:border-purple-500 text-white text-xs font-medium tracking-widest uppercase transition-all duration-300"
-                    >
-                      <span>VIEW ON GITHUB</span>
-                      <span className="text-xs">↗</span>
-                    </a>
+                    {project.githubUrl && (
+                      <a
+                        href={project.githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center justify-center space-x-3 px-6 py-3 border border-purple-500/50 bg-background hover:bg-purple-500/10 hover:border-purple-500 text-white text-xs font-medium tracking-widest uppercase transition-all duration-300"
+                      >
+                        <span>VIEW ON GITHUB</span>
+                        <span className="text-xs">↗</span>
+                      </a>
+                    )}
                   </div>
 
                 </div>
@@ -162,6 +165,7 @@ export function ProjectsSection() {
             </ScrollStackItem>
           ))}
         </ScrollStack>
+        </div>
 
       </div>
     </section>
