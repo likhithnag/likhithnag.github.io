@@ -1,0 +1,7 @@
+# Security.txt - Responsible Disclosure
+Contact: mailto:likhith.nagaraju.works@gmail.com
+Encryption: https://likhithnag.github.io/pgp-key.asc
+Acknowledgments: https://likhithnag.github.io/security/hall-of-fame
+Policy: https://likhithnag.github.io/security/policy
+Preferred-Languages: en
+Canonical: https://likhithnag.github.io/.well-known/security.txt

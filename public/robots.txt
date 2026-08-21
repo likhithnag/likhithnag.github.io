@@ -1,0 +1,18 @@
+# Robots.txt for Likhith's Portfolio
+User-agent: *
+Disallow: /api/
+Disallow: /private/
+Disallow: /*.json$
+Disallow: /*.xml$
+
+# Allow all public content
+Allow: /
+
+# Sitemap
+Sitemap: https://likhithnag.github.io/sitemap.xml
+
+# Crawl-delay for respectful bots
+Crawl-delay: 10
+
+# Host
+Host: likhithnag.github.io

@@ -1,0 +1,42 @@
+{
+  "name": "Likhith N Gowda — Portfolio",
+  "short_name": "Likhith",
+  "description": "Software Engineer | Java Specialist | Gen AI Enthusiast",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0C0C0C",
+  "theme_color": "#0C0C0C",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/avatar-new-no-bg.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "categories": ["portfolio", "technology", "software"],
+  "screenshots": [],
+  "shortcuts": [
+    {
+      "name": "Contact",
+      "short_name": "Contact",
+      "description": "Contact Likhith",
+      "url": "/#contact",
+      "icons": [{ "src": "/favicon.svg", "sizes": "192x192" }]
+    },
+    {
+      "name": "Projects",
+      "short_name": "Projects",
+      "description": "View Projects",
+      "url": "/#projects",
+      "icons": [{ "src": "/favicon.svg", "sizes": "192x192" }]
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useCallback } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Send } from 'lucide-react';
 
@@ -9,7 +9,7 @@ interface Message {
   content: string;
 }
 
-function TypewriterText({ text }: { text: string }) {
+function TypewriterText({ text, onType }: { text: string; onType?: () => void }) {
   const [displayText, setDisplayText] = useState('');
   const [index, setIndex] = useState(0);
   const reduceMotion = typeof window !== 'undefined' && window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
@@ -35,9 +35,21 @@ function TypewriterText({ text }: { text: string }) {
 
   useEffect(() => {
     setDisplayText(text.slice(0, index));
-  }, [index, text]);
+    onType?.();
+  }, [index, text, onType]);
 
-  return <span>{displayText}<span className="typewriter-cursor" /></span>;
+  const parts = displayText.split('\n');
+  return (
+    <span style={{ whiteSpace: 'pre-wrap' }}>
+      {parts.map((part, i) => (
+        <React.Fragment key={i}>
+          {part}
+          {i < parts.length - 1 && <br />}
+        </React.Fragment>
+      ))}
+      <span className="typewriter-cursor" />
+    </span>
+  );
 }
 
 export function ChatbotModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
@@ -45,7 +57,7 @@ export function ChatbotModal({ isOpen, onClose }: { isOpen: boolean; onClose: ()
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [showSuggestions, setShowSuggestions] = useState(true);
-  const messagesEndRef = useRef<HTMLDivElement>(null);
+  const messagesContainerRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLTextAreaElement>(null);
 
   const suggestions = [
@@ -54,6 +66,14 @@ export function ChatbotModal({ isOpen, onClose }: { isOpen: boolean; onClose: ()
     'What is his tech stack?',
     'How to contact him?',
   ];
+
+  // Clear chat history when modal closes
+  useEffect(() => {
+    if (!isOpen) {
+      setMessages([]);
+      setShowSuggestions(true);
+    }
+  }, [isOpen]);
 
   // Handle ESC key & prevent body scroll
   useEffect(() => {
@@ -64,11 +84,25 @@ export function ChatbotModal({ isOpen, onClose }: { isOpen: boolean; onClose: ()
     };
     if (isOpen) {
       document.addEventListener('keydown', handleKeyDown);
+      const style = document.createElement('style');
+      style.id = 'chatbot-scroll-lock';
+      style.textContent = `
+        html, body {
+          overflow: hidden !important;
+          height: 100% !important;
+          width: 100% !important;
+        }
+      `;
+      document.head.appendChild(style);
       document.body.style.overflow = 'hidden';
+      document.documentElement.style.overflow = 'hidden';
     }
     return () => {
       document.removeEventListener('keydown', handleKeyDown);
-      document.body.style.overflow = 'unset';
+      const style = document.getElementById('chatbot-scroll-lock');
+      if (style) style.remove();
+      document.body.style.overflow = '';
+      document.documentElement.style.overflow = '';
     };
   }, [isOpen, onClose]);
 
@@ -81,12 +115,56 @@ export function ChatbotModal({ isOpen, onClose }: { isOpen: boolean; onClose: ()
   }, [isOpen, messages.length]);
 
   const scrollToBottom = useCallback(() => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    const container = messagesContainerRef.current;
+    if (container) {
+      container.scrollTop = container.scrollHeight;
+    }
   }, []);
 
+  // Auto-scroll when new messages arrive
   useEffect(() => {
     scrollToBottom();
   }, [messages, isLoading, scrollToBottom]);
+
+  // Stop wheel events from propagating to body
+  const handleWheel = useCallback((e: React.WheelEvent) => {
+    e.stopPropagation();
+  }, []);
+
+  // Add custom scrollbar styles
+  useEffect(() => {
+    if (isOpen) {
+      const style = document.createElement('style');
+      style.id = 'chatbot-scrollbar-style';
+      style.textContent = `
+        .chat-messages::-webkit-scrollbar {
+          width: 6px;
+        }
+        .chat-messages::-webkit-scrollbar-track {
+          background: transparent;
+        }
+        .chat-messages::-webkit-scrollbar-thumb {
+          background: linear-gradient(180deg, #9b6bff, #ec4899);
+          border-radius: 3px;
+          border: 2px solid transparent;
+          background-clip: content-box;
+        }
+        .chat-messages::-webkit-scrollbar-thumb:hover {
+          background: linear-gradient(180deg, #a855f7, #f472b6);
+          background-clip: content-box;
+        }
+        .chat-messages {
+          scrollbar-width: thin;
+          scrollbar-color: #9b6bff transparent;
+        }
+      `;
+      document.head.appendChild(style);
+      return () => {
+        const style = document.getElementById('chatbot-scrollbar-style');
+        if (style) style.remove();
+      };
+    }
+  }, [isOpen]);
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter' && !e.shiftKey) {
@@ -188,7 +266,11 @@ export function ChatbotModal({ isOpen, onClose }: { isOpen: boolean; onClose: ()
               </div>
 
               {/* Messages */}
-              <div className="flex-1 min-h-0 overflow-y-auto overscroll-contain p-4 md:p-6 space-y-4" ref={messagesEndRef}>
+              <div
+                ref={messagesContainerRef}
+                className="flex-1 min-h-0 overflow-y-auto p-4 md:p-6 space-y-4 chat-messages"
+                onWheel={handleWheel}
+              >
                 <AnimatePresence mode="popLayout">
                   {showSuggestions && messages.length === 0 && (
                     <motion.div
@@ -233,7 +315,7 @@ export function ChatbotModal({ isOpen, onClose }: { isOpen: boolean; onClose: ()
                         }`}
                       >
                         {msg.role === 'assistant' ? (
-                          <TypewriterText text={msg.content} />
+                          <TypewriterText text={msg.content} onType={scrollToBottom} />
                         ) : (
                           <p className="text-sm leading-relaxed no-wrap-words">{msg.content}</p>
                         )}
@@ -292,9 +374,4 @@ export function ChatbotModal({ isOpen, onClose }: { isOpen: boolean; onClose: ()
       )}
     </AnimatePresence>
   );
-}
-
-interface Message {
-  role: 'user' | 'assistant';
-  content: string;
 }
