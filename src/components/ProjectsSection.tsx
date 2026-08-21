@@ -22,7 +22,7 @@ export function ProjectsSection() {
   return (
     <section
       id="projects"
-      className="relative w-full bg-background text-white font-kanit pt-20 pb-96 md:pb-84 px-6 md:px-12 lg:px-16"
+      className="relative w-full bg-background text-white font-kanit pt-20 pb-128 md:pb-96 px-6 md:px-12 lg:px-16"
     >
       <div className="max-w-7xl mx-auto w-full relative z-10">
         
@@ -59,7 +59,7 @@ export function ProjectsSection() {
         </motion.div>
 
         {/* Stacking Deck */}
-        <div className="mb-32 md:mb-16">
+        <div className="mb-56 md:mb-24">
           <ScrollStack
             itemDistance={24}
             itemScale={0.035}
